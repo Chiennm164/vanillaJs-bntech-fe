@@ -447,7 +447,7 @@ function handlerRenderProjects(projects) {
                          <div class="project-text" >
                             <div class="project-title">${project.title}</div>
                              <div class="project-des"> ${project.des} </div>
-                              <a href="../pages/detail.html" id="${project.id}" class="project-btn">Chi tiết
+                              <a href="../detail.html" id="${project.id}" class="project-btn">Chi tiết
                               <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                    fill="currentColor" class="bi bi-arrow-right-short"
                                    viewBox="0 0 16 16">
