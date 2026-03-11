@@ -37,7 +37,8 @@
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (max-width: 1300px) {
-     #navbar a {
+
+     #navbar a,.sp {
           font-size: 20px;
           margin: 0 10px;
      }
@@ -60,7 +61,7 @@
 }
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (max-width: 1199.98px) {
-     #navbar a {
+     #navbar a,.sp {
           font-size: 18px;
           margin: 0 8px;
      }
@@ -78,7 +79,7 @@
 
 /*  */
 @media (max-width: 1100px) {
-     #navbar a {
+     #navbar a,.sp {
           font-size: 18px;
      }
      #text-run {
@@ -188,7 +189,7 @@
      }
      #navbar a:hover,
      .sp:hover {
-          color: #fff;background-color: #5e8bdf;
+          color: #fff; background-color: #5e8bdf;
      }
      /* // thumb  */
      #carousel,

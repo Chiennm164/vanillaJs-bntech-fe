@@ -29,3 +29,8 @@
 #content img {
      width: 100%;
 }
+
+#content svg {
+     fill: var(--main-text-color);
+}
+

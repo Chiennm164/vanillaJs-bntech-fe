@@ -117,7 +117,7 @@ background-color: #fff;
      width: 90%;
 }
 .products-btn {
-     color: #243f99;
+     color: var(--main-text-color);
      font-size: 22px;
      font-weight: 500;
      text-decoration: none;
@@ -143,7 +143,7 @@ background-color: #fff;
 
 .counterparty-wrap {
      display: flex;
-    margin-top: 20px;
+     margin-top: 20px;
      transition: all 2s;
      animation: loopproduct 30s infinite;
      animation-timing-function: linear;
@@ -160,10 +160,10 @@ background-color: #fff;
 
 .counterparty-wrap img {
      margin: 0 10px;
-     padding: 0 40px;
+     /* padding: 0 40px; */
      width: 200px;
-     border: 1px solid #dfdfdf;
+     border: 1px solid #efefef;
      object-fit: contain;
-     box-shadow: 0px 0px 0 0 #999;
+     box-shadow: 0px 0px 0 0 #efefef;
      cursor: pointer;
 }

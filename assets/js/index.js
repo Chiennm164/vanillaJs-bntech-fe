@@ -1,444 +1,447 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+
+
 // list các dự án
 let projects = [
-     {
-          id: 1,
-          title: 'BIG C Tân Hiệp 1',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               '/assets/images/1.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail:
+    {
+        id: 1,
+        title: 'BIG C Tân Hiệp 1',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            '/assets/images/1.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail:
 
-               [
-                    ['Nhà máy đông lạnh',
-                         `Đối với nhà máy dông lạnh , yêu cầu tiên quyết là kiểm soát nhiệt độ bảo quản sản phẩm trong kho lạnh .
+            [
+                ['Nhà máy đông lạnh',
+                    `Đối với nhà máy dông lạnh , yêu cầu tiên quyết là kiểm soát nhiệt độ bảo quản sản phẩm trong kho lạnh .
              Cùng việc lắp đặt kho lạnh cho khách hàng , BKTECH có thể thiết kế , cung cấp và lắp đặt hệ thống điều khiển , kiểm soát
              , giám soát , giảm nhiệt độ bằng những thiết bị điện tử của những nhà cung cấp hàng đầu thế giới như ABB , Dixell , Schneider, ...
              Với công nghệ 4.0 , khi khách hàng có yêu cầu , BKTECH có thể hỗ trợ giảm sát , cảnh báo từ xa cho khách hàng khi có tín hiệu
              sự cố đồng thời tư vấn khách hàng xử lý sự cố trước khi cần sự có mặt của bộ phận dịch vụ bảo trì BKTECH.
              `],
-                    [
-                         'Cấu tạo - Nguyên Lý kho lạnh',
-                         `Kho lạnh được lắp ráp từ những tấm panel cách nhiệt .
+                [
+                    'Cấu tạo - Nguyên Lý kho lạnh',
+                    `Kho lạnh được lắp ráp từ những tấm panel cách nhiệt .
          Các tấm panel kết nối với nhau bằng cơ chế ngàm Z-lock cho tấm vạch và trần .
          Cấu tạo cảu panel cách nhiệt gốm 2 lớp tole colorbond hoặc inox , lớp giữa là form cách nhiệt .`,
-                         [
-                              `Độ dài của tôle colorbond hoặc innox từ 0.41 mm đến 1.5 mm .`,
-                              `Độ dày của panel từ 50 mm đến 200 mm tương ứng vơi nhu cầu của khách hàng và sản phẩm .`,
-                              `Khổ rộng của tấm panel từ 600 mm đến 1,120 mm .`,
-                              `Chiều dài của tấm panel tối đa là 12,0000mm .`],
-                         `Tấm panel trần dài sẽ được thiết kế có cáp treo trên
-             khung đà mái nhà để hỗ trợ tăng-đưa . Vách sẽ được mỗ và gắn một khung cửa để làm cửa ra vào .`
-                    ],
                     [
-                         'Đặc kiểm kỹ thuật',
-                         [
-                              'Công suất : 1,000 MT đến 20,000 MT . ',
-                              ' Foam chống cháy lan theo tiêu chuẩn Việt Nam .',
-                              'Ứng dụng : sử dụng làm kho lạnh cho thuê , kho chứa hàng lạnh phục vụ trong các xưởng chế biến thuỷ sản , thực phẩm . ',
-                              ' Nhiệt độ kho từ -60 độ C/ ~ 20 độ C tuỳ thuộc vào yêu cầu của khách hàng và sản phẩm .'
-                         ]
+                        `Độ dài của tôle colorbond hoặc innox từ 0.41 mm đến 1.5 mm .`,
+                        `Độ dày của panel từ 50 mm đến 200 mm tương ứng vơi nhu cầu của khách hàng và sản phẩm .`,
+                        `Khổ rộng của tấm panel từ 600 mm đến 1,120 mm .`,
+                        `Chiều dài của tấm panel tối đa là 12,0000mm .`],
+                    `Tấm panel trần dài sẽ được thiết kế có cáp treo trên
+             khung đà mái nhà để hỗ trợ tăng-đưa . Vách sẽ được mỗ và gắn một khung cửa để làm cửa ra vào .`
+                ],
+                [
+                    'Đặc kiểm kỹ thuật',
+                    [
+                        'Công suất : 1,000 MT đến 20,000 MT . ',
+                        ' Foam chống cháy lan theo tiêu chuẩn Việt Nam .',
+                        'Ứng dụng : sử dụng làm kho lạnh cho thuê , kho chứa hàng lạnh phục vụ trong các xưởng chế biến thuỷ sản , thực phẩm . ',
+                        ' Nhiệt độ kho từ -60 độ C/ ~ 20 độ C tuỳ thuộc vào yêu cầu của khách hàng và sản phẩm .'
                     ]
-               ]
-          ,
-          des: 'chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh',
-          top: true,
-          style: 1,
-     },
-     {
-          id: 2,
-          title: 'BIG C Tân Hiệp 2',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+                ]
+            ]
+        ,
+        des: 'chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh,chi tiet cong nghiep lanh',
+        top: true,
+        style: 1,
+    },
+    {
+        id: 2,
+        title: 'BIG C Tân Hiệp 2',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'dieu hoa',
-          top: true,
-          style: 2,
-     },
-     {
-          id: 3,
-          title: 'BIG C Tân Hiệp 3',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'dieu hoa',
+        top: true,
+        style: 2,
+    },
+    {
+        id: 3,
+        title: 'BIG C Tân Hiệp 3',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'cong nghiep lanh',
-          top: true,
-          style: 1,
-     },
-     {
-          id: 4,
-          title: 'BIG C Tân Hiệp 4',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'cong nghiep lanh',
+        top: true,
+        style: 1,
+    },
+    {
+        id: 4,
+        title: 'BIG C Tân Hiệp 4',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'dieu hoa',
-          top: false,
-          style: 2,
-     },
-     {
-          id: 5,
-          title: 'BIG C Tân Hiệp 5',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'dieu hoa',
+        top: false,
+        style: 2,
+    },
+    {
+        id: 5,
+        title: 'BIG C Tân Hiệp 5',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'dieu hoa',
-          top: false,
-          style: 2,
-     },
-     {
-          id: 6,
-          title: 'BIG C Tân Hiệp 6',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'dieu hoa',
+        top: false,
+        style: 2,
+    },
+    {
+        id: 6,
+        title: 'BIG C Tân Hiệp 6',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'cong nghiep lanh',
-          top: true,
-          style: 1,
-     },
-     {
-          id: 7,
-          title: 'BIG C Tân Hiệp 7',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'cong nghiep lanh',
+        top: true,
+        style: 1,
+    },
+    {
+        id: 7,
+        title: 'BIG C Tân Hiệp 7',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'cong nghiep lanh',
-          top: false,
-          style: 1,
-     },
-     {
-          id: 8,
-          title: 'BIG C Tân Hiệp 8',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'cong nghiep lanh',
+        top: false,
+        style: 1,
+    },
+    {
+        id: 8,
+        title: 'BIG C Tân Hiệp 8',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'dieu hoa',
-          top: false,
-          style: 2,
-     },
-     {
-          id: 9,
-          title: 'BIG C Tân Hiệp 9',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'dieu hoa',
+        top: false,
+        style: 2,
+    },
+    {
+        id: 9,
+        title: 'BIG C Tân Hiệp 9',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'cong nghiep lanh',
-          top: false,
-          style: 1,
-     },
-     {
-          id: 9,
-          title: 'BIG C Tân Hiệp 9',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'cong nghiep lanh',
+        top: false,
+        style: 1,
+    },
+    {
+        id: 9,
+        title: 'BIG C Tân Hiệp 9',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'cong nghiep lanh',
-          top: false,
-          style: 1,
-     },
-     {
-          id: 9,
-          title: 'BIG C Tân Hiệp 9',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'cong nghiep lanh',
+        top: false,
+        style: 1,
+    },
+    {
+        id: 9,
+        title: 'BIG C Tân Hiệp 9',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'cong nghiep lanh',
-          top: false,
-          style: 1,
-     },
-     {
-          id: 9,
-          title: 'BIG C Tân Hiệp 9',
-          images: [
-               'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-               'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-               'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-               'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
-          ],
-          info: {
-               client: 'BigC',
-               time: '08-2020',
-               address: 'Tân Hiệp - TPHCM',
-               system: 'Mitsubitshi',
-               wattage: '3kw-1.100kw',
-          },
-          detail: [
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'cong nghiep lanh',
+        top: false,
+        style: 1,
+    },
+    {
+        id: 9,
+        title: 'BIG C Tân Hiệp 9',
+        images: [
+            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
+            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
+            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
+            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+        ],
+        info: {
+            client: 'BigC',
+            time: '08-2020',
+            address: 'Tân Hiệp - TPHCM',
+            system: 'Mitsubitshi',
+            wattage: '3kw-1.100kw',
+        },
+        detail: [
 
-               ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-               ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-               ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-          ],
-          des: 'cong nghiep lanh',
-          top: false,
-          style: 1,
-     }
+            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
+            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
+            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
+        ],
+        des: 'cong nghiep lanh',
+        top: false,
+        style: 1,
+    }
 
 ]
 handlerMenuMobile();
 checkDetail();
 
+
 function checkDetail() {
 
-     const elDetail = $('#detailProject')
-     const elIndex = $('#text-run')
-     const elProjects = $('#pageProjects')
+    const elDetail = $('#detailProject')
+    const elIndex = $('#text-run')
+    const elProjects = $('#pageProjects')
 
-     if (elDetail) {
-          let idLocal = localStorage.getItem('idProject');
-          if (idLocal) {
-               handlerRenderDetailProject(idLocal)
-          }
-          handlerRenderProjects(projects);
-     }
-     if (elIndex) {
-          handlerRenderProjects(projects);
+    if (elDetail) {
+        let idLocal = localStorage.getItem('idProject');
+        if (idLocal) {
+            handlerRenderDetailProject(idLocal)
+        }
+        handlerRenderProjects(projects);
+    }
+    if (elIndex) {
+        handlerRenderProjects(projects);
 
-     }
-     if (elProjects) {
-          handlerRenderProjects(projects);
-     }
+    }
+    if (elProjects) {
+        handlerRenderProjects(projects);
+    }
 
 
 }
 // xử lý nút menu bp mobile
 function handlerMenuMobile() {
-     let elNav = $('#navbar')
-     let elMenu = $('.menu-mobile')
+    let elNav = $('#navbar')
+    let elMenu = $('.menu-mobile')
 
-     elMenu.onclick = () => {
-          let a = elNav.classList.toggle('show')
+    elMenu.onclick = () => {
+        let a = elNav.classList.toggle('show')
 
-          if (a) {
-               elMenu.innerHTML = `
+        if (a) {
+            elMenu.innerHTML = `
              <span>
              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
               <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
             </svg>
           </span>
                 `
-          } else {
-               elMenu.innerHTML = `
+        } else {
+            elMenu.innerHTML = `
                <span>
                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                   </svg>
           </span>
                `     }
-     }
+    }
 }
 
 function handlerRenderProjects(projects) {
-     let topProjects = [];
-     let elProject = $('#projects .loop');
-     let elTitle = $$('#projects .title-main-s')
-     if (elTitle.length > 0) {
-          choicePr()
-          elTitle.forEach((et) => {
-               et.addEventListener('click', () => {
-                    let a = $('#projects .activeProject');
-                    a.classList.remove('activeProject');
-                    et.classList.toggle('activeProject');
-                    choicePr()
-               })
-          })
-     } else {
-          projects.forEach((pr) => {
-               if (pr.top) {
-                    topProjects.push(pr);
-                    render(topProjects)
-               }
-          });
-          handlerBtnDetailProject()
-     }
-     // nút chuyển các title , trong page dự án
-     function choicePr() {
-          let active = $('#projects .activeProject');
-          if (active.id == 1) {
-               topProjects = projects.filter((pr) => pr.style == 1);
-          } else if (active.id == 2) {
-               topProjects = projects.filter((pr) => pr.style == 2);
-          } else {
-               topProjects = projects
-          }
-          render(topProjects)
-          handlerBtnDetailProject()
-     }
-     // render list project
-     function render(topProjects) {
-          let htmls = topProjects.map((project) => {
-               let img = project.images[3]
-               return ` <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12  project">
+    let topProjects = [];
+    let elProject = $('#projects .loop');
+    let elTitle = $$('#projects .title-main-s')
+    if (elTitle.length > 0) {
+        choicePr()
+        elTitle.forEach((et) => {
+            et.addEventListener('click', () => {
+                let a = $('#projects .activeProject');
+                a.classList.remove('activeProject');
+                et.classList.toggle('activeProject');
+                choicePr()
+            })
+        })
+    } else {
+        projects.forEach((pr) => {
+            if (pr.top) {
+                topProjects.push(pr);
+                render(topProjects)
+            }
+        });
+        handlerBtnDetailProject()
+    }
+    // nút chuyển các title , trong page dự án
+    function choicePr() {
+        let active = $('#projects .activeProject');
+        if (active.id == 1) {
+            topProjects = projects.filter((pr) => pr.style == 1);
+        } else if (active.id == 2) {
+            topProjects = projects.filter((pr) => pr.style == 2);
+        } else {
+            topProjects = projects
+        }
+        render(topProjects)
+        handlerBtnDetailProject()
+    }
+    // render list project
+    function render(topProjects) {
+        let htmls = topProjects.map((project) => {
+            let img = project.images[3]
+            return ` <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12  project">
                          <div class="project-wrap">
                          <img loading="lazy" src="${img}" alt="">
                          <div class="project-text" >
@@ -455,38 +458,38 @@ function handlerRenderProjects(projects) {
                          </div>
                          </div>
                   </div>`
-          }).join('')
-          elProject.innerHTML = htmls;
-     }
+        }).join('')
+        elProject.innerHTML = htmls;
+    }
 
 }
 // nút chi tiết trong card project
 function handlerBtnDetailProject() {
-     let listBtnDetail = $$('.project-btn');
-     listBtnDetail.forEach((btn) => {
-          btn.addEventListener('click', () => {
-               localStorage.clear()
-               localStorage.setItem('idProject', btn.id)
+    let listBtnDetail = $$('.project-btn');
+    listBtnDetail.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            localStorage.clear()
+            localStorage.setItem('idProject', btn.id)
 
-          })
-     })
+        })
+    })
 }
 
 // render 1 project , với tham số là id
 function handlerRenderDetailProject(id) {
-     if (id) {
-          let project = projects.find((pr) => pr.id == id)
-          if (project) {
+    if (id) {
+        let project = projects.find((pr) => pr.id == id)
+        if (project) {
 
-               $('#detailProject .title p').innerHTML = project.title;
-               // __________________________________________
-               $('#detailProject .img-group').innerHTML = project.images.map((img) => {
-                    return ` <img class="col-sm-6 pb-5"
+            $('#detailProject .title p').innerHTML = project.title;
+            // __________________________________________
+            $('#detailProject .img-group').innerHTML = project.images.map((img) => {
+                return ` <img class="col-sm-6 pb-5"
                     src="${img}"
                     class="d-block w-100 " alt="...">`
-               }).join('');
-               // __________________________________________
-               $('#detailProject .info').innerHTML = `
+            }).join('');
+            // __________________________________________
+            $('#detailProject .info').innerHTML = `
                <div class="title-main-s title-xl p-0 ">Thông tin dự án</div>
                <p>Khách hàng : <span>${project.info.client}</span> </p>
                <p>Thời gian : <span> ${project.info.time}</span> </p>
@@ -498,23 +501,23 @@ function handlerRenderDetailProject(id) {
                     thuật cao chuyên về kho lạnh .</div>
                `               // __________________________________________
 
-               let content = '';
-               $('#detailProject .detail-pj').innerHTML = project.detail.map((item) => {
-                    let content2 = ''
-                    content = item.map((dt1, index) => {
-                         if (index === 0) {
-                              content2 = ' <h1 class="title-main-m ">' + dt1 + '</h1>'
-                         } else if (Array.isArray(dt1)) {
-                              content2 = dt1.map((d) => {
-                                   return `<li class="des-main p-0 pb-3 text-left "> ${d}  </li>`
-                              }).join(' ');
-                         } else {
-                              content2 = ' <p class="des-main p-0 pb-3"> ' + dt1 + '</p>'
-                         }
-                         return `${content2} `
-                    }).join(' ');
-                    return `${content}`
-               }).join(' ');
-          }
-     }
+            let content = '';
+            $('#detailProject .detail-pj').innerHTML = project.detail.map((item) => {
+                let content2 = ''
+                content = item.map((dt1, index) => {
+                    if (index === 0) {
+                        content2 = ' <h1 class="title-main-m ">' + dt1 + '</h1>'
+                    } else if (Array.isArray(dt1)) {
+                        content2 = dt1.map((d) => {
+                            return `<li class="des-main p-0 pb-3 text-left "> ${d}  </li>`
+                        }).join(' ');
+                    } else {
+                        content2 = ' <p class="des-main p-0 pb-3"> ' + dt1 + '</p>'
+                    }
+                    return `${content2} `
+                }).join(' ');
+                return `${content}`
+            }).join(' ');
+        }
+    }
 }

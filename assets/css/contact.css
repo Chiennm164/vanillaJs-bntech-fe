@@ -1,20 +1,3 @@
-.form input {
-     padding:10px 15px;
-     margin: 10px 0px;
-     min-height: 60px;
-}
-
-.t{
-     margin-top: 50px;
-     margin-bottom: 20px;
-}
-
-.form .btn-main{
-     margin-bottom: 40px;
-     padding: 15px 45px ;
-}
-.form textarea {
-     padding: 15px;
-     /* margin: 10px 5px; */
-     min-height: 100px;
+.contact{
+padding-top: 50px;
 }
