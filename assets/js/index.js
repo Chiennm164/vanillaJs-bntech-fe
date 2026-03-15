@@ -12,7 +12,7 @@ let projects = [
             'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
             'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
             'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            '/assets/images/1.jpg'
+            '/assets/images/du-an-1.png'
         ],
         info: {
             client: 'BigC',

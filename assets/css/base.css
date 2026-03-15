@@ -125,25 +125,28 @@ body {
 .title-main-s {
     color: var(--main-text-color);
     font-weight: 600;
-    font-size: 28px;
+    font-size: 18px;
     padding: 20px 0 35px 0;
     text-transform: uppercase;
     position: relative;
     cursor: pointer;
 }
+
 .title-main-m {
     color: var(--main-text-color);
     font-weight: 600;
-    font-size: 38px;
+    font-size: 22px;
     padding: 20px 0 35px 0;
     text-transform: uppercase;
     position: relative;
     cursor: pointer;
 }
+
+
 .title-main-l {
     color: var(--main-text-color);
     font-weight: 600;
-    font-size: 45px;
+    font-size: 28px;
     padding: 0px 0px 20px 0;
     text-transform: uppercase;
 }
@@ -241,7 +244,7 @@ body {
 }
 #navbar a,
 .sp {
-    font-size: 25px;
+    font-size: 18px;
     margin: 0 15px;
     padding: 0 5px;
     font-weight: 500;
@@ -434,7 +437,7 @@ footer {
     width: 100%;
     padding-top: 6%;
     color: var(--main-text-color);
-    font-size: 50px;
+    font-size: 38px;
     font-weight: 700;
     text-transform: uppercase;
 }
