@@ -107,13 +107,13 @@
      cursor: pointer;
      border-radius: 2px;
      border: 1px solid rgb(248, 248, 248);
-     min-height: 600px;
+     min-height: 400px;
      width: 100%;
      display: flex;
      flex-wrap: wrap;
      align-items: center;
      justify-content: space-between;
-     padding: 60px;
+     padding: 40px;
      text-align: left;
      margin-bottom: 20px;
      flex-direction: column;

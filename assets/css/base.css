@@ -2,7 +2,7 @@
     /* --main-text-color: rgb(229, 9, 20);  
     --main-bg-color: rgb(229, 9, 20);
     --main-hover-color: rgb(229, 9, 20); */
-    --main-text-color: #172183;
+    --main-text-color: #008029;
     --main-bg-color: #172183;
     --main-hover-color: #172183;
 
@@ -42,6 +42,10 @@ body {
 
 .text-main {
     color: var(--main-text-color);
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* css btn main */
