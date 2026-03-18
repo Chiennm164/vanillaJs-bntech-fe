@@ -85,19 +85,19 @@ body {
 }
 
 .des-main-l {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 35px;
     font-weight: 400;
 }
 
 .des-main {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 35px;
     font-weight: 500;
 }
 
 .des-main-s {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 32px;
     width: 90%;
 }
@@ -179,7 +179,7 @@ body {
     position: absolute;
     height: 2px;
     width: 100%;
-    background-color: var(--main-bg-color);
+    background-color: var(--border1-color);
     bottom: 10px;
     right: 0;
 }
@@ -269,8 +269,8 @@ body {
 }
 #navbar a:hover,
 .sp:hover {
-    /* color: var(--main-hover-color); */
-    opacity: 0.7;
+    color: var(--main-text-color);
+    /* opacity: 0.7; */
 }
 #navbar a:hover ul {
     display: block;
@@ -327,7 +327,7 @@ body {
 
 /* css footer  */
 footer {
-    background-color: var(--main-bg-color);
+    background-color: var(--bg5-color);
     width: 100%;
     min-height: 200px;
 }
@@ -335,7 +335,7 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 5rem 0 3rem 0;
-    color: var(--text3-color);
+    color: var(--main-text-color);
 }
 .logo-company {
     display: flex;
@@ -375,7 +375,7 @@ footer {
 .about a {
     text-decoration: none;
     margin: 0px 0px 10px 0px;
-    color: var(--text3-color);
+    color: var(--main-text-color);
 }
 .about svg {
     margin-right: 10px;
@@ -402,7 +402,7 @@ footer {
 .line-end {
     border-top: 1px solid var(--border1-color);
     font-size: 18px;
-    color: var(--text3-color);
+    color: var(--main-text-color);
     padding: 10px 0;
 }
 /* css btn-hotline  */
