@@ -356,7 +356,7 @@ function checkDetail() {
     const elDetail = $('#detailProject')
     const elIndex = $('#text-run')
     const elProjects = $('#pageProjects')
-
+    
     if (elDetail) {
         let idLocal = localStorage.getItem('idProject');
         if (idLocal) {
