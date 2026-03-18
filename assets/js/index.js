@@ -9,10 +9,10 @@ let projects = [
         id: 1,
         title: 'BIG C Tân Hiệp 1',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            '/assets/images/du-an-1.png'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-1.png'
         ],
         info: {
             client: 'BigC',
@@ -63,10 +63,10 @@ let projects = [
         id: 2,
         title: 'BIG C Tân Hiệp 2',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-2.png'
         ],
         info: {
             client: 'BigC',
@@ -89,10 +89,10 @@ let projects = [
         id: 3,
         title: 'BIG C Tân Hiệp 3',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-3.png'
         ],
         info: {
             client: 'BigC',
@@ -115,10 +115,10 @@ let projects = [
         id: 4,
         title: 'BIG C Tân Hiệp 4',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-4.png'
         ],
         info: {
             client: 'BigC',
@@ -141,10 +141,10 @@ let projects = [
         id: 5,
         title: 'BIG C Tân Hiệp 5',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-5.png'
         ],
         info: {
             client: 'BigC',
@@ -167,10 +167,10 @@ let projects = [
         id: 6,
         title: 'BIG C Tân Hiệp 6',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-6.png'
         ],
         info: {
             client: 'BigC',
@@ -193,10 +193,10 @@ let projects = [
         id: 7,
         title: 'BIG C Tân Hiệp 7',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-7.png'
         ],
         info: {
             client: 'BigC',
@@ -219,10 +219,10 @@ let projects = [
         id: 8,
         title: 'BIG C Tân Hiệp 8',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-8.png'
         ],
         info: {
             client: 'BigC',
@@ -245,10 +245,10 @@ let projects = [
         id: 9,
         title: 'BIG C Tân Hiệp 9',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-9.png'
         ],
         info: {
             client: 'BigC',
@@ -271,10 +271,10 @@ let projects = [
         id: 9,
         title: 'BIG C Tân Hiệp 9',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-1.png'
         ],
         info: {
             client: 'BigC',
@@ -297,10 +297,10 @@ let projects = [
         id: 9,
         title: 'BIG C Tân Hiệp 9',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-1.png'
         ],
         info: {
             client: 'BigC',
@@ -323,10 +323,10 @@ let projects = [
         id: 9,
         title: 'BIG C Tân Hiệp 9',
         images: [
-            'http://hungtri.com/upload/images/2.3-so-do-to-chuc-financial-partners.jpg',
-            'http://hungtri.com/upload/images/2019-04-origin-55c2bac2ff413f021072892df4d40873-500x0.jpg',
-            'http://hungtri.com/upload/images/unnamed-6-.jpg ',
-            'http://hungtri.com/upload/images/anh1-nhamaytanifood-zytl-1-.jpg'
+            './assets/images/du-an-4.png',
+            './assets/images/du-an-3.png',
+            './assets/images/du-an-2.png',
+            './assets/images/du-an-1.png'
         ],
         info: {
             client: 'BigC',

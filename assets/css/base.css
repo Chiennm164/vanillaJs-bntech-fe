@@ -38,6 +38,9 @@ body {
     text-rendering: optimizeSpeed;
 }
 
+img {
+    border-radius: 2px;
+}
 /* css text  */
 
 .text-main {
