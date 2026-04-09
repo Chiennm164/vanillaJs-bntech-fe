@@ -1,6 +1,6 @@
 /* css carousel  */
 #carousel {
-     margin-top: 100px;
+     margin-top: 80px;
      width: 100%;
 }
 
@@ -22,7 +22,7 @@
 
 .carousel-caption {
      /* top: 0; */
-     bottom: 100px;
+     bottom: 50%;
      /* letter-spacing: 0.1px; */
      /* color: #081d54; */
 }
@@ -33,7 +33,7 @@
      padding: 4rem 0;
      text-align: center;
      font-weight: 500;
-     color: var(--main-text-color);
+     color: var(--main-title-color);
 }
 
 /* css content > introduce  */

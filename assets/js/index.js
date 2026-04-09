@@ -349,6 +349,7 @@ let projects = [
 ]
 handlerMenuMobile();
 checkDetail();
+clickTop();
 
 
 function checkDetail() {
@@ -521,3 +522,25 @@ function handlerRenderDetailProject(id) {
         }
     }
 }
+
+function clickTop() {
+    const btnTop = document.querySelector('.btn-top');
+
+    // Scroll lên đầu
+    btnTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Hiện nút khi scroll xuống
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            btnTop.style.display = 'block';
+        } else {
+            btnTop.style.display = 'none';
+        }
+    });
+}
+
