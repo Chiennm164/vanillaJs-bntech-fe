@@ -1,185 +1,289 @@
-/* css carousel  */
+/* =========================
+   Carousel
+========================= */
 #carousel {
-     margin-top: 80px;
-     width: 100%;
+  margin-top: 80px;
+  width: 100%;
 }
 
 .carousel-indicators [data-bs-target] {
-     width: 12px;
-     height: 12px;
-     border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
 .carousel-item img {
-     max-height: 800px;
+  max-height: 600px;
 }
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-     width: 4rem;
-     height: 4rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .carousel-caption {
-     /* top: 0; */
-     bottom: 50%;
-     /* letter-spacing: 0.1px; */
-     /* color: #081d54; */
+  bottom: 50%;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.45);
+    color: #e0e0e0;
+    text-align: left;
+    width: 50%;
 }
 
-/* css text run  */
+.carousel-caption h1 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    margin-left: 2%;
+        opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+.carousel-caption h1:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================
+   Text Run
+========================= */
 #text-run {
-     font-size: 2.5rem;
-     padding: 4rem 0;
-     text-align: center;
-     font-weight: 500;
-     color: var(--main-title-color);
+  font-size: 2.5rem;
+  padding: 4rem 0;
+  text-align: center;
+  font-weight: 500;
+  color: var(--main-text1-color);
 }
 
-/* css content > introduce  */
+/* =========================
+   Content & Introduction
+========================= */
 #content {
-     width: 100%;
-     background-color: #fff;
+  width: 100%;
+  background-color: #fff;
 }
 
 #introduce {
-     display: flex;
-     flex-direction: column;
-     margin: 0 0 4rem 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 4rem 0;
 }
 
-/* css img  */
+/* =========================
+   Images
+========================= */
 .introduce-img {
-     position: relative;
-     display: flex;
-     align-items: center;
-     flex-direction: column;
-     max-height: 500px;
-     justify-content: center;
-     margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 500px;
+  margin-bottom: 30px;
 }
 
 .introduce-img img {
-     width: 90%;
-     height: 100%;
-     object-fit: cover;
-}
-
-.introduce-sub img {
-     width: 80%;
-     height: 100%;
-     object-fit: fill
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .introduce-sub {
-     margin-top: 20px;
-     margin-bottom: 10px;
+  margin: 20px 0 10px;
 }
 
-/* css services  */
+.introduce-sub img {
+  width: 80%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* =========================
+   Services
+========================= */
 #services {
-     padding: 0 0 100px 0;
+  padding: 0 0 100px 0;
 }
 
 .service-item {
-     margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .service-item svg {
-     margin-top: 10px;
-     color: #243f99;
+  margin-top: 10px;
+  color: #243f99;
 }
 
 .service-img {
-     width: 100%;
+  width: 100%;
 }
 
-/* css products */
-
+/* =========================
+   Products
+========================= */
 #products {
-     padding: 40px 0 5rem 0;
+  padding: 40px 0 5rem 0;
 }
 
 .products {
-     padding: 20px;
-
+  padding: 20px;
 }
 
 .products-wrap {
-     cursor: pointer;
-     border-radius: 2px;
-     border: 1px solid rgb(248, 248, 248);
-     min-height: 400px;
-     width: 100%;
-     display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: space-between;
-     padding: 40px;
-     text-align: left;
-     margin-bottom: 20px;
-     flex-direction: column;
-     background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 400px;
+  margin-bottom: 20px;
+  padding: 40px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid rgb(248, 248, 248);
+  border-radius: 2px;
+  background-color: #fff;
+  
+  /* 1. Add the default shadow here */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  
+  /* Your existing transition */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+/* 2. Add the Hover Effect */
 .products-wrap:hover {
-     box-shadow: 0 4px 8px 8px #0000004d;
-
+  /* A deeper, softer shadow to create a "lifted" look */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  
+  /* Optional: slightly nudge the card up for extra polish */
+  transform: translateY(-4px);
 }
 
 .products .des-main {
-     width: 90%;
+  width: 90%;
 }
 
 .products-btn {
-     color: var(--main-text-color);
-     font-size: 22px;
-     font-weight: 500;
-     text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--main-text-color);
+  text-decoration: none;
+  transition: all 0.2s;
 }
 
 .products-btn:hover {
-     font-size: 24px;
-     opacity: 0.9;
+  font-size: 24px;
+  opacity: 0.9;
 }
 
-/* css projects  */
+/* =========================
+   Projects
+========================= */
 #projects {
-     margin: 40px 0 100px 0;
+  margin: 40px 0 100px 0;
 }
 
-/* css pattern  */
-#counterparty {
-     width: 100%;
-     min-height: 100px;
-     overflow: hidden;
-     padding-bottom: 100px;
+/* =========================
+   Counterparty Loop
+========================= */
+/* #counterparty {
+  width: 100%;
+  min-height: 100px;
+  overflow: hidden;
+  padding-bottom: 100px;
 }
 
 .counterparty-wrap {
-     display: flex;
-     margin-top: 20px;
-     transition: all 2s;
-     animation: loopproduct 30s infinite;
-     animation-timing-function: linear;
+  display: flex;
+  margin-top: 20px;
+  transition: all 2s;
+  animation: loopproduct 30s linear infinite;
 }
 
 @keyframes loopproduct {
-     from {
-          transform: translateX(0%);
-     }
-
-     to {
-          transform: translateX(-100%);
-     }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .counterparty-wrap img {
-     margin: 0 10px;
-     /* padding: 0 40px; */
-     width: 200px;
-     border: 1px solid #efefef;
-     object-fit: contain;
-     box-shadow: 0px 0px 0 0 #efefef;
+  width: 200px;
+  margin: 0 10px;
+  border: 1px solid #efefef;
+  object-fit: contain;
+  box-shadow: 0 0 0 0 #efefef;
+  cursor: pointer;
+} */
+
+
+/* Container bên ngoài để ẩn phần dư và tạo hiệu ứng mờ 2 đầu */
+.counterparty-container {
+  overflow: hidden;
+  padding: 20px 0;
+  background: #fff;
+  white-space: nowrap;
+  position: relative;
+  /* Tạo hiệu ứng mờ dần ở 2 cạnh trái/phải */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.counterparty-wrap {
+  display: flex;
+  width: max-content; /* Đảm bảo wrapper ôm sát nội dung để loop chuẩn */
+  animation: loopproduct 30s linear infinite;
+}
+
+/* ACTION: Dừng chuyển động khi người dùng di chuột vào */
+.counterparty-container:hover .counterparty-wrap {
+  animation-play-state: paused;
+}
+
+.counterparty-wrap img {
+  width: 180px;
+  height: 100px;
+  margin: 0 20px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  padding: 10px;
+  background-color: #fff;
+  
+  /* Style mặc định: Logo mờ và trắng đen */
+  /* filter: grayscale(100%); */
+  /* opacity: 0.6; */
+  transition: all 0.4s ease;
+}
+
+/* ACTION: Hiệu ứng khi hover vào từng logo */
+.counterparty-wrap img:hover {
      cursor: pointer;
+  filter: grayscale(0%); /* Hiện màu gốc */
+  opacity: 1;
+  transform: scale(1.1); /* Phóng to nhẹ */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--main-bg2-color, #efefef);
+}
+
+/* Tối ưu animation Loop */
+@keyframes loopproduct {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Dịch chuyển đúng một nửa chiều dài nếu bạn đã nhân đôi số lượng ảnh */
+    transform: translateX(-50%); 
+  }
 }
