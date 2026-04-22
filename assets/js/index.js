@@ -378,10 +378,10 @@ function checkDetail() {
 // xử lý nút menu bp mobile
 function handlerMenuMobile() {
     let elNav = $('#navbar')
-    let elMenu = $('.menu-mobile')
+    let elMenu = $('.nav-toggle')
 
     elMenu.onclick = () => {
-        let a = elNav.classList.toggle('show')
+        let a = elNav.classList.toggle('visible')
 
         if (a) {
             elMenu.innerHTML = `
@@ -405,14 +405,14 @@ function handlerMenuMobile() {
 function handlerRenderProjects(projects) {
     let topProjects = [];
     let elProject = $('#projects .loop');
-    let elTitle = $$('#projects .title-main-s')
+    let elTitle = $$('#projects .heading-sm')
     if (elTitle.length > 0) {
         choicePr()
         elTitle.forEach((et) => {
             et.addEventListener('click', () => {
-                let a = $('#projects .activeProject');
-                a.classList.remove('activeProject');
-                et.classList.toggle('activeProject');
+                let a = $('#projects .project-active');
+                a.classList.remove('project-active');
+                et.classList.toggle('project-active');
                 choicePr()
             })
         })
@@ -427,7 +427,7 @@ function handlerRenderProjects(projects) {
     }
     // nút chuyển các title , trong page dự án
     function choicePr() {
-        let active = $('#projects .activeProject');
+        let active = $('#projects .project-active');
         if (active.id == 1) {
             topProjects = projects.filter((pr) => pr.style == 1);
         } else if (active.id == 2) {
@@ -491,13 +491,13 @@ function handlerRenderDetailProject(id) {
             }).join('');
             // __________________________________________
             $('#detailProject .info').innerHTML = `
-               <div class="title-main-s title-xl p-0 ">Thông tin dự án</div>
+               <div class="heading-sm title-xl p-0 ">Thông tin dự án</div>
                <p>Khách hàng : <span>${project.info.client}</span> </p>
                <p>Thời gian : <span> ${project.info.time}</span> </p>
                <p>Địa điểm : <span>${project.info.address}</span> </p>
                <p>Hệ thống : <span>${project.info.system}</span> </p>
                <p>Công suất : <span> ${project.info.wattage}</span> </p>
-               <div class="des-main"> BKTECH cung cấp các dịch vụ : Thiết kế , thi công , lắp đặt bảo trì
+               <div class="text-base"> BKTECH cung cấp các dịch vụ : Thiết kế , thi công , lắp đặt bảo trì
                     với chuyên môn , kỹ
                     thuật cao chuyên về kho lạnh .</div>
                `               // __________________________________________
@@ -507,13 +507,13 @@ function handlerRenderDetailProject(id) {
                 let content2 = ''
                 content = item.map((dt1, index) => {
                     if (index === 0) {
-                        content2 = ' <h1 class="title-main-m ">' + dt1 + '</h1>'
+                        content2 = ' <h1 class="heading-md ">' + dt1 + '</h1>'
                     } else if (Array.isArray(dt1)) {
                         content2 = dt1.map((d) => {
-                            return `<li class="des-main p-0 pb-3 text-left "> ${d}  </li>`
+                            return `<li class="text-base p-0 pb-3 text-left "> ${d}  </li>`
                         }).join(' ');
                     } else {
-                        content2 = ' <p class="des-main p-0 pb-3"> ' + dt1 + '</p>'
+                        content2 = ' <p class="text-base p-0 pb-3"> ' + dt1 + '</p>'
                     }
                     return `${content2} `
                 }).join(' ');
