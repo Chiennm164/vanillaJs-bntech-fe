@@ -1,36 +1,45 @@
+/* ===== Introduce Page ===== */
 #content {
      margin-top: 90px;
      margin-bottom: 40px;
 }
+
+/* Article-like heading hierarchy for company intro */
 #content h1 {
      font-size: 24px;
      letter-spacing: 1px;
-     color: red;
+     color: var(--title-color);
      padding: 10px 0;
      text-transform: uppercase;
 }
 #content h2 {
      font-size: 22px;
      letter-spacing: 1px;
-     color: blue;
+     color: var(--title-soft);
      padding-left: 5px;
 }
 #content h3 {
      font-size: 20px;
      letter-spacing: 1px;
+     color: var(--title-soft);
 }
-#content p,li {
-     color: #333;
+
+#content p,
+#content li {
+     color: var(--text-medium);
      padding: 5px;
-     list-style: circle;
      font-size: 18px;
      padding-left: 10px;
 }
+
+#content li {
+     list-style: circle;
+}
+
 #content img {
      width: 100%;
 }
 
 #content svg {
-     fill: var(--main-text-color);
+     fill: var(--title-soft);
 }
-

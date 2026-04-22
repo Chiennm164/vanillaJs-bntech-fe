@@ -1,7 +1,9 @@
+/* ===== Contact Page ===== */
 .contact {
     padding-top: 50px;
 }
 
+/* Shared input sizing for contact form */
 .form-control {
     height: 40px;
     font-size: 16px;

@@ -1,30 +1,33 @@
 :root {
-    /* ===== Primary Colors ===== */
-    --primary-green: #2C9445;
-    --primary-blue: #172183;
-    --primary-red: #ff4d4d;
-    --primary-white: #fff;
+    /* ===== Brand Palette ===== */
+    --primary-green: #2c9445;
+    --primary-blue: #1f6f35;
+    --primary-red: #e25555;
+    --primary-white: #ffffff;
 
     /* ===== Text Colors ===== */
-    --text-light: #F5F5F5;
-    --text-dark: #333;
-    --text-medium: #444;
-    --text-inverse: #fff;
+    --text-light: #f5f7f3;
+    --text-dark: #1f2937;
+    --text-medium: #4b5563;
+    --text-muted: #6b7280;
+    --text-inverse: #ffffff;
+    --title-color: #2c9445;
+    --title-soft: #256f37;
 
     /* ===== Background Colors ===== */
-    --bg-primary: #2C9445;
-    --bg-secondary: #fff;
-    --bg-alert: #ff4d4d;
-    --bg-light: #f8f8f8;
+    --bg-primary: #2c9445;
+    --bg-secondary: #ffffff;
+    --bg-alert: #e25555;
+    --bg-light: #f4f8f3;
 
     /* ===== Border & Shadow ===== */
-    --border-light: #ccc;
-    --shadow-medium: rgb(0 0 0 / 50%);
-    --shadow-heavy: rgb(102 102 102 / 90%);
+    --border-light: #d6e2d7;
+    --shadow-medium: rgb(15 23 42 / 16%);
+    --shadow-heavy: rgb(15 23 42 / 28%);
 
-    /* ===== Semantic Aliases (for specific components) ===== */
-    --accent-green: #2C9445;
-    --hover-color: #172183;
+    /* ===== Semantic Aliases ===== */
+    --accent-green: #3aa957;
+    --hover-color: #23773a;
 }
 
 * {
@@ -49,26 +52,15 @@ a {
 }
 
 img {
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
-/* css text  */
-
-.text-accent {
-    color: var(--text-light);
-}
-
+/* ===== Utilities ===== */
 .text-center {
     text-align: center;
 }
 
-/* css btn main */
-.btn-group {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
+/* ===== Primary Button ===== */
 .btn-main {
     color: var(--text-inverse);
     background-color: var(--bg-primary);
@@ -82,16 +74,15 @@ img {
     font-size: 1.5rem;
     letter-spacing: 1px;
     box-shadow: 1px 1px 5px 1px var(--boxshadow3-color);
+    transition: opacity 0.5s linear, box-shadow 0.5s linear;
 }
 
 .btn-main:hover {
     opacity: 0.9;
-    transition: all 0.5s linear;
     box-shadow: 1px 1px 5px 1px var(--text-dark);
 }
 
-/* css main des  */
-.text-lg,
+/* ===== Body Copy ===== */
 .text-base,
 .text-sm {
     padding: 15px 0;
@@ -99,80 +90,93 @@ img {
     color: var(--text-medium);
 }
 
-.text-lg {
-    font-size: 20px;
-    line-height: 35px;
+.text-base {
+    font-size: 1.8rem;
+    line-height: 1.8;
     font-weight: 400;
 }
 
-.text-base {
-    font-size: 18px;
-    line-height: 35px;
-    font-weight: 500;
-}
-
 .text-sm {
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 1.6rem;
+    line-height: 1.75;
     width: 90%;
 }
 
-.text-lg strong,
 .text-base strong,
 .text-sm strong {
     color: var(--accent-green);
 }
 
-/* css detail main      */
+/* ===== Detail Text Blocks ===== */
 .detail {
     color: var(--text-medium);
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 2rem;
 }
 
-/* css span main 1  */
-.icon-primary {
-    color: royalblue;
-}
-
-.icon-primary svg {
-    width: 25px;
-    height: 25px;
-}
-
-/* css title main       */
-.heading-sm {
+/* ===== Shared Title System ===== */
+.heading-sm,
+.heading-md,
+.heading-lg {
     font-weight: 600;
-    font-size: 18px;
-    padding: 20px 0 35px 0;
     text-transform: uppercase;
-    position: relative;
-    cursor: pointer;
-}
-
-.heading-md {
-    font-weight: 600;
-    font-size: 22px;
-    padding: 20px 0 35px 0;
-    text-transform: uppercase;
-    position: relative;
-    cursor: pointer;
+    letter-spacing: 0.02em;
 }
 
 .heading-lg {
-    font-weight: 600;
-    font-size: 28px;
-    padding: 0px 0px 20px 0;
-    text-transform: uppercase;
+    color: var(--title-color);
+    font-size: 4.2rem;
+    line-height: 1.25;
+    padding: 0 0 2rem;
 }
 
-.heading-sm span {
-    color: var(--text-light);
-    font-weight: 600;
+.heading-md {
+    color: var(--title-soft);
+    font-size: 3rem;
+    line-height: 1.35;
+    padding: 1.5rem 0 2rem;
 }
 
-.title-xxl {
-    font-size: 80px;
+.heading-sm {
+    color: var(--title-color);
+    font-size: 2.2rem;
+    line-height: 1.45;
+    padding: 1.5rem 0 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.heading-sm span,
+.heading-md span {
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+.des-main,
+.des-main-l,
+.detail-main {
+    color: var(--text-medium);
+}
+
+.des-main {
+    font-size: 1.8rem;
+    line-height: 1.85;
+    font-weight: 400;
+    padding: 0 0 2rem;
+}
+
+.des-main-l {
+    font-size: 1.7rem;
+    line-height: 1.85;
+    font-weight: 400;
+    padding: 0 0 1.6rem;
+}
+
+.detail-main {
+    font-size: 1.7rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: var(--text-dark);
 }
 
 .title-xl {
@@ -180,58 +184,11 @@ img {
     font-size: 40px;
 }
 
-.title-l {
-    margin-top: 20px;
-    font-size: 25px;
-}
-
-.nav-active {
-    font-weight: 700 !important;
-    position: relative;
-}
-
-.nav-active::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background-color: var(--border-light);
-    bottom: 10px;
-    right: 0;
-}
-
 #main {
     position: relative;
 }
 
-/* css header contact */
-#contact {
-    color: var(--text-light);
-}
-
-.span {
-    padding-right: 7px;
-    font-size: 10px;
-}
-
-.contact-group {
-    display: flex;
-    justify-content: flex-end;
-    max-height: 30px;
-    margin-top: 2px;
-}
-
-.contact-info {
-    display: flex;
-    padding: 2px 20px;
-    border-left: 1px solid var(--border-light);
-}
-
-.contact-info p {
-    font-size: 13px;
-}
-
-/* css header */
+/* ===== Header ===== */
 #header {
     position: fixed;
     top: 0;
@@ -252,7 +209,6 @@ img {
     justify-content: space-between;
 }
 
-/* css logo  */
 .logo {
     width: 250px;
 }
@@ -271,7 +227,6 @@ img {
     transition: 0.3s ease;
 }
 
-/* css navbar */
 #navbar {
     display: flex;
     list-style: none;
@@ -350,7 +305,6 @@ img {
     color: var(--text-light);
 }
 
-/* css menu */
 .nav-toggle {
     color: var(--primary-blue);
     border-radius: 2px;
@@ -372,7 +326,7 @@ img {
     transition: all 0.5s linear;
 }
 
-/* css footer  */
+/* ===== Footer ===== */
 footer {
     background-color: var(--bg-primary);
     color: var(--text-light);
@@ -402,13 +356,6 @@ footer {
 .footer-wrap img {
     width: 280px;
     /* filter: brightness(0) invert(1); */
-}
-
-.footer-wrap .text {
-    width: 85%;
-    font-size: 14px;
-    padding-top: 20px;
-    text-align: center;
 }
 
 .footer-col {
@@ -446,25 +393,13 @@ footer {
     margin-bottom: 10px;
 }
 
-.footer-map {
-    width: 30%;
-    min-height: 250px;
-    border: 2px solid #fff;
-}
-
-.footer-map iframe {
-    width: 100%;
-    height: 100%;
-    min-width: 500px;
-}
-
 .line-end {
     border-top: 1px solid var(--border-light);
     font-size: 18px;
     color: var(--text-light);
     padding: 10px 0;
 }
-/* ===== Base ===== */
+/* ===== Floating Contact Buttons ===== */
 .btn-hotline,
 .btn-zalo,
 .btn-facebook,
@@ -497,7 +432,7 @@ footer {
     animation: showUp 0.6s ease forwards;
 }
 
-/* ===== Position ===== */
+/* Individual stacking positions for floating buttons */
 .btn-facebook { bottom: 50px; animation-delay: 0.4s; }
 .btn-zalo     { bottom: 100px; animation-delay: 0.2s; }
 .btn-hotline  { animation-delay: 0.6s; }
@@ -509,7 +444,7 @@ footer {
     animation-delay: 0.8s;
 }
 
-/* ===== Hover & Active ===== */
+/* Hover and active states */
 .btn-hotline:hover,
 .btn-zalo:hover,
 .btn-facebook:hover,
@@ -525,14 +460,14 @@ footer {
     transform: scale(0.95);
 }
 
-/* ===== Link reset ===== */
+/* Reset anchor appearance inside floating buttons */
 .btn-hotline a,
 .btn-zalo a,
 .btn-facebook a {
     text-decoration: none;
 }
 
-/* ===== Animation ===== */
+/* Entry animation */
 @keyframes showUp {
     to {
         opacity: 1;
@@ -540,7 +475,7 @@ footer {
     }
 }
 
-/* pulse riêng cho hotline (KHÔNG ghi đè showUp) */
+/* Standalone pulse effect for hotline */
 .btn-hotline::after {
     content: "";
     position: absolute;
@@ -555,7 +490,7 @@ footer {
     100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
 }
 
-/* ===== btn-top icon ===== */
+/* Scroll-to-top icon feedback */
 .btn-top svg {
     transition: transform 0.3s ease;
 }
@@ -563,8 +498,7 @@ footer {
 .btn-top:hover svg {
     transform: translateY(-3px) rotate(10deg);
 }
-/* css thumb page child  */
-
+/* ===== Inner Page Banner ===== */
 #thumb {
     width: 100%;
     min-height: 300px;
@@ -572,9 +506,9 @@ footer {
     /* background-color: var(--bg5-color); */
     background-image: url(../images/du-an-1.png);
     /* background: linear-gradient(to right,
-            #172183,
-            #3f51ff,
-            #aab2ff); */
+            #2C9445,
+            #53b56b,
+            #cfead6); */
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -594,8 +528,7 @@ footer {
     color: var(--text-dark);
 }
 
-/* css project     */
-
+/* ===== Project Card ===== */
 .project {
     margin-bottom: 20px;
     position: relative;
@@ -631,9 +564,6 @@ footer {
     transition: all 1s linear;
 }
 
-/* .project:hover{
-     color: red;
-} */
 .project-wrap:hover .project-des {
     opacity: 1;
     transform: translateY(0);
@@ -687,23 +617,22 @@ border-radius: 4px;
     color: var(--accent-green);
 }
 
-/* css show moblie */
+/* Shared state for mobile nav toggled by JS */
 .visible {
     display: flex !important;
-    color: red;
+    color: var(--text-light);
     flex-direction: column;
     z-index: 999;
     position: absolute;
     width: 100%;
-    background: #ccc;
+    background: var(--bg-primary);
     top: 100px;
     left: 0px;
 }
 
-/* css active project */
-
+/* Active project filter state */
 .project-active {
-    color: red;
+    color: var(--title-color);
     position: relative;
 }
 
@@ -713,16 +642,6 @@ border-radius: 4px;
     height: 4px;
     position: absolute;
     bottom: 0;
-    background-color: red;
+    background-color: var(--accent-green);
     left: 0;
-}
-
-.scroll {
-    flex-wrap: nowrap !important;
-    transition: all 1s linear;
-}
-
-.btn-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
 }

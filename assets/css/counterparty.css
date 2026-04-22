@@ -1,26 +1,28 @@
+/* ===== Counterparty Page ===== */
 #content {
      margin-top: 90px;
      margin-bottom: 50px;
 }
+
 #content .title {
      font-size: 30px;
-     color: blue;
+     color: var(--title-color);
      text-transform: uppercase;
      padding: 20px;
      font-weight: 500;
 }
+
 #content .list {
      display: flex;
      flex-wrap: wrap;
 }
-#content {
-}
+
 .list .item {
      margin: 10px 0;
      padding: 10px;
-
 }
+
 .item img {
-     border: 1px solid blue;
+     border: 1px solid rgba(44, 148, 69, 0.18);
      width: 100%;
 }

@@ -267,85 +267,6 @@ let projects = [
         top: false,
         style: 1,
     },
-    {
-        id: 9,
-        title: 'BIG C Tân Hiệp 9',
-        images: [
-            './assets/images/du-an-4.png',
-            './assets/images/du-an-3.png',
-            './assets/images/du-an-2.png',
-            './assets/images/du-an-1.png'
-        ],
-        info: {
-            client: 'BigC',
-            time: '08-2020',
-            address: 'Tân Hiệp - TPHCM',
-            system: 'Mitsubitshi',
-            wattage: '3kw-1.100kw',
-        },
-        detail: [
-
-            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-        ],
-        des: 'cong nghiep lanh',
-        top: false,
-        style: 1,
-    },
-    {
-        id: 9,
-        title: 'BIG C Tân Hiệp 9',
-        images: [
-            './assets/images/du-an-4.png',
-            './assets/images/du-an-3.png',
-            './assets/images/du-an-2.png',
-            './assets/images/du-an-1.png'
-        ],
-        info: {
-            client: 'BigC',
-            time: '08-2020',
-            address: 'Tân Hiệp - TPHCM',
-            system: 'Mitsubitshi',
-            wattage: '3kw-1.100kw',
-        },
-        detail: [
-
-            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-        ],
-        des: 'cong nghiep lanh',
-        top: false,
-        style: 1,
-    },
-    {
-        id: 9,
-        title: 'BIG C Tân Hiệp 9',
-        images: [
-            './assets/images/du-an-4.png',
-            './assets/images/du-an-3.png',
-            './assets/images/du-an-2.png',
-            './assets/images/du-an-1.png'
-        ],
-        info: {
-            client: 'BigC',
-            time: '08-2020',
-            address: 'Tân Hiệp - TPHCM',
-            system: 'Mitsubitshi',
-            wattage: '3kw-1.100kw',
-        },
-        detail: [
-
-            ['Nhà máy đông lạnh', 'chi tiết nhà máy đông lạnh'],
-            ['Cấu tạo - Nguyên Lý kho lạnh', 'Cấu tạo - Nguyên Lý kho lạnh'],
-            ['Đặc kiểm kỹ thuật', 'chi tiết Đặc kiểm kỹ thuật'],
-        ],
-        des: 'cong nghiep lanh',
-        top: false,
-        style: 1,
-    }
-
 ]
 handlerMenuMobile();
 checkDetail();
@@ -377,8 +298,12 @@ function checkDetail() {
 }
 // xử lý nút menu bp mobile
 function handlerMenuMobile() {
-    let elNav = $('#navbar')
-    let elMenu = $('.nav-toggle')
+    const elNav = $('#navbar')
+    const elMenu = $('.nav-toggle')
+
+    if (!elNav || !elMenu) {
+        return
+    }
 
     elMenu.onclick = () => {
         let a = elNav.classList.toggle('visible')
@@ -405,8 +330,14 @@ function handlerMenuMobile() {
 function handlerRenderProjects(projects) {
     let topProjects = [];
     let elProject = $('#projects .loop');
-    let elTitle = $$('#projects .heading-sm')
-    if (elTitle.length > 0) {
+    let elTitle = $$('#projects .heading-sm');
+    const activeFilter = $('#projects .project-active');
+
+    if (!elProject) {
+        return
+    }
+
+    if (elTitle.length > 0 && activeFilter) {
         choicePr()
         elTitle.forEach((et) => {
             et.addEventListener('click', () => {
@@ -448,7 +379,7 @@ function handlerRenderProjects(projects) {
                          <div class="project-text" >
                             <div class="project-title">${project.title}</div>
                              <div class="project-des"> ${project.des} </div>
-                              <a href="../detail.html" id="${project.id}" class="project-btn">Chi tiết
+                              <a href="detail.html" id="${project.id}" class="project-btn">Chi tiết
                               <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                    fill="currentColor" class="bi bi-arrow-right-short"
                                    viewBox="0 0 16 16">
@@ -525,6 +456,10 @@ function handlerRenderDetailProject(id) {
 
 function clickTop() {
     const btnTop = document.querySelector('.btn-top');
+
+    if (!btnTop) {
+        return;
+    }
 
     // Scroll lên đầu
     btnTop.addEventListener('click', () => {
