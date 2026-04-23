@@ -5,7 +5,7 @@
 }
 
 #content .title {
-     font-size: 30px;
+     font-size: 3rem;
      color: var(--title-color);
      text-transform: uppercase;
      padding: 20px;

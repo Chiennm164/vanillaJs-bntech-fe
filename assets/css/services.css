@@ -16,7 +16,7 @@
 #content #title {
      margin-bottom: 50px;
      text-align: center;
-     font-size: 50px;
+     font-size: 5rem;
      color: var(--title-color);
      font-weight: 600;
 }
@@ -52,7 +52,7 @@
 .service-content--text {
      color: var(--title-color);
      text-transform: uppercase;
-     font-size: 30px;
+     font-size: 3rem;
      font-weight: 500;
      padding-bottom: 20px;
 }

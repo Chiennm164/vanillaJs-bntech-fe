@@ -1,6 +1,70 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+// ===== Carousel Animation Effects =====
+const carousel = $('#carouselExampleCaptions');
+const carouselNext = $('.carousel-control-next');
+const carouselPrev = $('.carousel-control-prev');
+
+if (carousel && carouselNext && carouselPrev) {
+    // Track which direction the carousel is moving
+    let isMovingNext = true;
+    let isAnimating = false;
+
+    // Bootstrap carousel event: slide.bs.carousel fires BEFORE slide transition
+    carousel.addEventListener('slide.bs.carousel', (e) => {
+        if (isAnimating) return;
+        
+        isAnimating = true;
+        isMovingNext = e.direction === 'next' ? true : false;
+        
+        // Get the next active item that will be displayed
+        const nextItem = e.relatedTarget;
+        const nextImg = nextItem.querySelector('img');
+        
+        if (nextImg) {
+            // Remove any existing animation classes
+            nextImg.classList.remove('carousel-slide-in-left', 'carousel-slide-in-right');
+            
+            // Add the appropriate animation class based on direction
+            // Use requestAnimationFrame to ensure class is added after previous removal
+            requestAnimationFrame(() => {
+                nextImg.classList.add(isMovingNext ? 'carousel-slide-in-right' : 'carousel-slide-in-left');
+            });
+        }
+    });
+
+    // Bootstrap carousel event: slid.bs.carousel fires AFTER slide transition completes
+    carousel.addEventListener('slid.bs.carousel', () => {
+        // Reset animation flag after carousel finishes
+        setTimeout(() => {
+            isAnimating = false;
+        }, 100);
+    });
+
+    // Add hover effects to control buttons
+    [carouselNext, carouselPrev].forEach(button => {
+        button.style.transition = 'all 0.3s ease';
+        
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.opacity = '0.8';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.opacity = '1';
+        });
+        
+        button.addEventListener('mousedown', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        button.addEventListener('mouseup', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+}
 
 
 // list các dự án
