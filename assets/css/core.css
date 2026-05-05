@@ -500,6 +500,7 @@ textarea{
     -ms-user-select: none;
     user-select: none;
     border: 1px solid transparent;
+    border-radius: 2;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 27px;
