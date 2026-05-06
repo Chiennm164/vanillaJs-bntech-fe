@@ -1,9 +1,9 @@
-(function($) {
+﻿(function($) {
 	"use strict";
     var HT = {};
 	
 	
-	/* MAIN VARIABLE */
+	
 	
     var $window            		= $(window),
 		$document           	= $(document),

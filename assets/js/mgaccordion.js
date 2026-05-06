@@ -1,4 +1,4 @@
-(function ($) {
+﻿(function ($) {
 
 	$.fn.mgaccordion = function (options) {
 
@@ -12,9 +12,7 @@
 		var openIcon, closeIcon;
 
 		this.initialize = function () {
-			/**
-			 * silently exit if passed element is not a list
-			 */
+			
 			if (!this.is('ul') && !this.is('ol')) {
 				console.log('Element is not a list');
 				return;

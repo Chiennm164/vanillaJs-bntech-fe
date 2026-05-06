@@ -1,9 +1,9 @@
-(function($) {
+﻿(function($) {
 	"use strict";
     var HT = {};
 
     var time = 100;
-	/* MAIN VARIABLE */
+	
 
     var $window            		= $(window),
 		$document           	= $(document),
@@ -68,9 +68,7 @@
 		});
     };
 
-	/*
-		COUNT DOWN SETTING
-	*/
+	
 
 	HT.countDown = function() {
 		if ($countDownTimer.elExists()) {
@@ -113,9 +111,7 @@
 	};
 
 
-	/************************************************************
-       CART LABEL CHECKED
-    *************************************************************/
+	
 
 	HT.CartLabel = function() {
 		if ($cart.elExists()) {
@@ -160,9 +156,7 @@
 	};
 
 
-	/************************************************************
-        Price Range Slider
-    *************************************************************/
+	
 
     HT.rangeSlider = function() {
         if ($priceRange.elExists()) {
