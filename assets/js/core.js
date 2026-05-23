@@ -4,15 +4,13 @@
 
     var time = 100;
 	
-
     var $window            		= $(window),
 		$document           	= $(document),
 		$niceSelect        		= $(".nice-select"),
-		$countDownTimer     	= $('.countdown-timer'),
 		$owl					= $('.owl-slide .owl-carousel'),
 		$cart					= $('#cart');
 
-	// Check if element exists
+	// Kiểm tra element tồn tại
     $.fn.elExists = function() {
         return this.length > 0;
     };
@@ -47,9 +45,7 @@
 	    });
     });
 
-   
-
-	// Check if element exists
+	// Kiểm tra element tồn tại
     HT.niceInit = function() {
         $niceSelect.niceSelect();
 		$(document).on('mouseenter', '.nice-select .mCSB_scrollTools', function(event) {
@@ -68,51 +64,6 @@
 		});
     };
 
-	
-
-	HT.countDown = function() {
-		if ($countDownTimer.elExists()) {
-
-			var countInstances = [];
-			$countDownTimer.each(function(index, element) {
-
-				var $this = $(this);
-
-				// Fetching from data attibutes
-				var year    = $this.attr("data-countdown-year") ? $this.attr("data-countdown-year") : 2019;
-				var month   = $this.attr("data-countdown-month") ? $this.attr("data-countdown-month") : 6;
-				var day     = $this.attr("data-countdown-day") ? $this.attr("data-countdown-day") : 28;
-
-				// Adding instances for multiple use
-				$this.addClass("instance-0" + index);
-
-				// Initializing the count down
-				countInstances[index] = simplyCountdown(".instance-0" + index, {
-					year: year,
-					month: month,
-					day: day,
-					words: {                            // Words displayed into the countdown
-						days: 'day',
-						hours: 'hr',
-						minutes: 'min',
-						seconds: 'sec',
-						pluralLetter: 's'
-					},
-					plural: true,                       // Use plurals
-					inline: false,
-					enableUtc: false,
-					refresh: 1000,                      // Default refresh every 1s
-					sectionClass: 'countdown-section',  // Section css class
-					amountClass: 'countdown-amount',    // Amount css class
-					wordClass: 'countdown-word'         // Word css class
-				});
-			});
-		}
-	};
-
-
-	
-
 	HT.CartLabel = function() {
 		if ($cart.elExists()) {
 			var $label = '.cart-label';
@@ -120,7 +71,6 @@
 			var $cartTransport = '.cart-transport';
 			var $radioLabel = '.cart-radio';
 			var $lbTitle = '.lb-title';
-
 
 			$(document).on('click', $label,function(){
 				let _this = $(this);
@@ -139,11 +89,7 @@
 				_this.parents($cartPayment).find('.extend').addClass('uk-hidden');
 
 				_this.addClass('checked');
-				// if(_this.parents('.option-2').find('input:checked').length){
-				// 	_this.parents('.option-2').find('input').prop( "checked", false );
-				// }else{
 					_this.parents('.option-2').find('input').prop( "checked", true );
-				// }
 				_this.parents('.option-2').find('.extend').removeClass('uk-hidden');
 			});
 
@@ -155,42 +101,7 @@
 		}
 	};
 
-
-	
-
-    HT.rangeSlider = function() {
-        if ($priceRange.elExists()) {
-        	let post_min_price = $( "#min_price" ).val();
-        	post_min_price = parseInt(post_min_price)
-        	let post_max_price = $( "#max_price" ).val();
-        	post_max_price = parseInt(post_max_price)
-
-        	let min_price = parseInt($( "#min_price" ).attr('data-min'));
-        	let max_price = parseInt($( "#max_price" ).attr('data-max'));
-            $priceRange.slider({
-                range: true,
-                min: min_price,
-                max: max_price,
-                values: [ post_min_price, post_max_price ],
-                slide: function( event, ui ) {
-                	console.log(ui.values[ 0 ]);
-                    $( "#min_price" ).val(addCommas(ui.values[ 0 ]) + 'Ä‘');
-                    $( "#max_price" ).val(addCommas(ui.values[ 1 ]) + 'Ä‘');
-
-
-                    $('.lds-css').removeClass('hidden');
-                    
-					let page = $('.pagination .uk-active span').text();
-					get_list_object(page);
-					$('.lds-css').addClass('hidden');
-                }
-            });
-            $( "#min_price" ).val(addCommas(post_min_price) + 'Ä‘'  );
-		    $( "#max_price" ).val(addCommas(post_max_price) + 'Ä‘');
-        }
-    };
-
-	HT.owl = function() {
+    HT.owl = function() {
 		let owl = $(this);
 		$owl.each(function(key, value){
 			let _this = $(this);
@@ -201,8 +112,6 @@
 		});
 	};
 
-
-  // Document ready functions
     $document.on('ready', function() {
         HT.niceInit(),
         HT.CartLabel(),
@@ -211,23 +120,7 @@
 
 })(jQuery);
 
-
 $(document).ready(function() {
-	var wd_width = $(window).width();
-	if(wd_width > 1220) {
-		var wow = new WOW().init();
-	}
-
-	$(function() {
-        $('.lazy').lazyload().trigger('lazyload');
-    });
-
-	//datetime
-	$('.datetimepicker').datetimepicker({
-		timepicker:false,
-		format:'d/m/Y',
-	});
-
 	$(document).on('click', '.abate', function(event) {
 		event.preventDefault();
 
@@ -244,7 +137,6 @@ $(document).ready(function() {
 
 		input.val(qty);
 		$('.js_buy').attr('data-quantity', qty);
-
 
 		return false;
 	});
@@ -264,25 +156,7 @@ $(document).ready(function() {
 	});
 
 	var time;
-	
-
-	// $(document).on('click' , '.uk-slidenav.uk-slidenav-contrast' , function(e){
-	// 	e.preventDefault();
-	// 	let _this = $(this);
-
-	// 	wow1 = new WOW(
-	// 		{
-	// 		boxClass:     'wow1',      // default
-	// 		animateClass: 'animated', // default
-	// 		offset:       0,          // default
-	// 		mobile:       true,       // default
-	// 		live:         true        // default
-	// 		}
-	// 	);
-	// 	wow1.init();
- //    });
 });
-
 
  $(window).load(function() {
  	var time = 0;
@@ -301,14 +175,8 @@ $(document).ready(function() {
 		let data = $(this).serializeArray();
 		let ajaxUrl = 'contact/ajax/contact/contact_baogia.html';
 
-
 		clearTimeout(time);
 
-		// console.log(1);
-		// return false;
-
-
-		//gửi ajax
 		time = setTimeout(function(){
 			$.ajax({
 				method: "POST",
@@ -340,7 +208,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-
 	var time = 0;
 
 	$(document).on('submit', '#register_form', function(){
@@ -355,14 +222,8 @@ $(document).ready(function() {
 
 		let ajaxUrl = 'contact/ajax/contact/contact_register.html';
 
-
 		clearTimeout(time);
 
-		// console.log(1);
-		// return false;
-
-
-		//gửi ajax
 		time = setTimeout(function(){
 			$.ajax({
 				method: "POST",
@@ -392,34 +253,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-
-	// var h_header = $('.pc-header').outerHeight();
-	// var target;
-
- 	// $(window).scroll(function(){
- 	// 	let scroll = $(window).scrollTop();
- 	// 	if (scroll >= h_header) {
- 	// 		$('body').addClass('fixed-header');
- 	// 		$('.pc-header').addClass('fixed');
- 	// 	}else{
- 	// 		$('body').removeClass('fixed-header');
- 	// 		$('.pc-header').removeClass('fixed');
- 	// 	}
- 	
-	 // 	$('.scroll-menu').each(function(i, e){
-	 // 		let id = $(e).attr('id');
-	 // 		target = $(e).offset().top;
-	 // 		if(target <= scroll){
-	 // 			$('.main-menu li> a').removeClass('active');
-	 // 			$('.main-menu li> a[href="#'+id+'"]').addClass('active');
-	 // 		}
-	 // 	});
- 	// });
-
- 	owl_intilize(); //slide
- 	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	//+++++++++++++++++++++++++++++++GENANER++++++++++++++++++++++++++++++++
-	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 	owl_intilize();
 
 	$(document).on('change','#city',function(e, data){
 		let _this = $(this);
@@ -448,7 +282,6 @@ $(document).ready(function() {
 		}
 		getLocation(param, '#ward');
 	});
-
 
 	$(document).on('change','#city_receive',function(e, data){
 		let _this = $(this);
@@ -483,16 +316,6 @@ $(document).ready(function() {
 		getLocation(param, '#ward_receive');
 	});
 
-
- 	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 	// +++++++++++++++++Xá»¨ LĂ JS á» TRANG HOME++++++++++++++++++++++++++++
- 	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
- 	$(function() {
-        $('.lazy').lazy();
-    });
-
- 	//+++++++++láº¥y dá»¯ liá»‡u Ä‘á»• vĂ o popup chi tiáº¿t sp á»Ÿ trang home+++++++++
     $(document).on('click' ,'.js_prd_popup',function(){
 		let _this = $(this);
 		let id = _this.attr('data-id');
@@ -509,8 +332,6 @@ $(document).ready(function() {
             	let json = JSON.parse(result);
 				setTimeout(function(){
 					$('#sync3').attr('src',json.prd_list_image1);
-					// $('#sync1').html('').html(json.prd_list_image);
-					// $('#sync2').html('').html(json.prd_list_image);
 					$('.prd-title').html('').html(json.prd_title);
 					$('.js_result_attr').html(json.js_addtribute);
 					$('.wrap-info').html('').html(json.js_info);
@@ -535,18 +356,11 @@ $(document).ready(function() {
         });
 	})
 
-
-	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	//+++++++++++++++++++++Xá»¬ LĂ á» TRANG CHI TIáº¾T SP ++++++++++++++++++++++
-	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-	// +++++++++++++hiá»ƒn thá»‹ láº¡i giĂ¡ cho sáº£n pháº©m+++++++++++++
 	if($('#js_prd_info').length){
  		render_price()
  	}
 
- 	// khi thay Ä‘á»•i phiĂªn báº£n thuá»™c tĂ­nh, sá»‘ lÆ°á»£ng, chÆ°Æ¡ng trĂ¬nh khuyáº¿n máº¡i
- 	//  thĂ¬ cáº­p nháº­t láº¡i giĂ¡ cho sáº£n pháº©m
+	// Cập nhật giá khi đổi thuộc tính / số lượng / khuyến mãi
 	$(document).on('click' ,'.js_addtribute .js_btn_choose' ,function(){
 		let _this = $(this);
 		_this.parent().find('.js_choose').removeClass('js_choose');
@@ -575,7 +389,6 @@ $(document).ready(function() {
 		render_price()
 	})
 
-	// ++++++++++++++++Khi nháº¥n mua hĂ ng, thĂªm vĂ o giá» hĂ ng++++++++++++++++
 	$(document).on('click touch' ,'.js_buy' ,function(){
 		render_price()
 		let _this = $(this);
@@ -621,7 +434,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// +++++++++Khi thĂªm nhanh sáº£n pháº©m Ä‘Æ°á»£c táº·ng 100% vĂ o giá» hĂ ng+++++++++
 	$(document).on('click' ,'.ajax_add_prd_gift' ,function(){
 		let _this = $(this);
 		let param = {
@@ -692,13 +504,9 @@ $(document).ready(function() {
 				        }
 				        $('.js_total_ship').html('-'+addCommas(totalShip)+'đ');
 				        $('.js_cart_coupon').html('<b>'+addCommas(sum(totalCart, totalShip))+'đ</b>');
-
-
-	        			// toastr.success('Bạn được giảm '+addCommas(result)+' tiền ship','');
 	            }
 	        });
         }, 500);
-
 
 	})
 	
@@ -734,15 +542,7 @@ $(document).ready(function() {
 	        });
 		}, 500);
 	})
-
-	
-
-
-	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	//+++++++++++++++++++++Xá»¬ LĂ á» TRANG DANH Má»¤C SP ++++++++++++++++++++++
-	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-	// khi chá»n thuá»™c tĂ­nh ta tiáº¿n hĂ nh load ra dá»¯ liá»‡u má»›i
+	// Load dữ liệu mới khi chọn thuộc tính
 	$(document).on('click','.attr' , function(){
 		if($(this).find('input[name="attr[]"]:checked').length){
 			$(this).find('input[name="attr[]"]').prop('js_choose', false);
@@ -758,13 +558,10 @@ $(document).ready(function() {
 			let attr_id= $(this).attr('data-keyword');
 			attr = attr + attr_id + ';' + id + ';';
 		});
-		// console.log(attr);
 		$('#choose_attr > input').val(attr).change();
 	})
 	var time;
 	$(document).on('change','.filter', function(){
-		// $("html, body").animate({ scrollTop: 0 }, "400");
-		// console.log(2);
 		$('.lds-css').removeClass('hidden');
 		let page = $('.pagination .uk-active span').text();
 
@@ -799,39 +596,7 @@ $(document).ready(function() {
 		$("input[name=input_time]").val(id);
 	});
 
- //    if($('.rating')){
-	// 	rating();
-	// }
-
 });
-
-// HĂ m tĂ­nh sá»‘ sao Ä‘Ă¡nh giĂ¡
-function rating(start = 0, selector = '.rating', inputForm = 'input.data-rate'){
-	var input = $(inputForm);
-	var ratings = $(selector);
-	for (var i = start; i < ratings.length; i++) {
-		var r = new SimpleStarRating(ratings[i]);
-		ratings[i].addEventListener('rate', function(e) {
-			var numStar = e.detail; // tĂ­nh sá»‘ sao
-			input.val(numStar);
-			get_title_rate(numStar);
-		});
-	}
-}
-
-function get_title_rate(numStar = 0){
-	let ajaxUrl = 'admin.html';
-	$.ajax({
-		method: "POST",
-		url: ajaxUrl,
-		data: {numStar: numStar},
-		dataType: 'json',
-		success: function(json){
-			$('.title-rating').text(json.htmlReview);
-		}
-	});
-}
-
 
 function get_list_object(page){
 	let keyword = $('.keyword').val();
@@ -857,8 +622,6 @@ function get_list_object(page){
 	min_price = min_price.substr(0, length_min - 1);
 	min_price = min_price.replace(/\./gi, "");
 
-
-
 	let max_price = $('#max_price').val();
 	let length_max = max_price.length;
 	max_price = max_price.substr(0, length_max - 1);
@@ -877,7 +640,6 @@ function get_list_object(page){
 	}
 
 	let pathname = window.location.pathname;
-	// ?mod=course&view=main
 	let href = pathname+'?';
 	$.each( param, function( key, value ) {
 		if(value != '' && value != undefined){
@@ -904,21 +666,9 @@ function get_list_object(page){
 			$('.total_row').html(json.total_row);
 			$('.from').html(json.from);
 			$('.to').html(json.to);
-			HT.countDown();
 	});
 };
 
-function GetURLParameter(sParam){
-	var sPageURL = window.location.search.substring(1);
-
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) {
-            return sParameterName[1];
-        }
-    }
-}
 function render_price(){
 	let price = $('#js_prd_info').attr('data-price');
 	let price_contact = $('#js_prd_info').attr('data-price_contact');
@@ -943,7 +693,6 @@ function render_price(){
 	if($('.js_addtribute .js_btn_choose').length){
 		$('.js_addtribute .js_choose').each(function() {
 			let attrid = $(this).attr('data-id');
-			// console.log(attrid);
 			let version = $(this).attr('data-version');
 			if(typeof $(this).attr('data-content') != 'undefined' ){
 				content = content + '</br>' + $(this).attr('data-content');
@@ -973,7 +722,6 @@ function render_price(){
 			}else{
 				attrids.push(attrid);
 			}
-			// console.log(attrids);
 		});
 
 		if(attrids.length >=1){
@@ -981,8 +729,6 @@ function render_price(){
 			if(product_version != ''){
 				if(attrids.length == 1){
 					product_version.forEach(function(item, index, array) {
-						// console.log(item);
-						// console.log(attrids);
 					    if(item.attribute1 == attrids[0] || item.attribute2 == attrids[0]	){
 					     	price = item.price_version;
 					     	product_versionId = item.id;
@@ -1073,7 +819,6 @@ function render_price(){
 			}
 		}
 	}
-	// console.log(conditionChoose);
 
 	if( ( conditionChoose == 1) || ($('.js_addtribute ul ').length == 0 && $('.js_block_promotional').length == 0 )){
 		$('.js_buy').attr('data-id', id);
@@ -1088,7 +833,6 @@ function render_price(){
 		$('.js_newprice').html('').html('Giá liên hệ');
 	}else{
 		if(price_sale == 0){
-			// console.log(price);
 			$('.js_newprice').html('').html(addCommas(price) + '<sup>đ</sup>');
 		}else{
 			$('.js_newprice').html('').html(addCommas(price_sale) + '<sup>đ</sup>');
@@ -1138,7 +882,6 @@ function getLocation(param, object){
 		});
 }
 
-
 function sum(a = 0 ,b = 0){
 	return parseFloat(a) + parseFloat(b);
 }
@@ -1146,18 +889,8 @@ function sub(a = 0 ,b = 0){
 	return parseFloat(a) - parseFloat(b);
 }
 
-
-
-
-
  $(window).load(function() {
 
- 	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	// +++++++++++++++++++++++++++Xá»¬ LI GIá» HĂ€NG CART++++++++++++++++++++++++++++++
- 	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-	// +++++++++++++++++++++++xĂ³a sáº£n pháº©m+++++++++++++++++++++++
 	$(document).on('click' ,'.js_del_prd' ,function(){
 		let _this = $(this);
 		let param = {
@@ -1188,7 +921,6 @@ function sub(a = 0 ,b = 0){
         });
 	})
 
-	// +++++++++++++++++++++++Cáº­p nháº­t sá»‘ lÆ°á»£ng+++++++++++++++++++++++
 	$(document).on('change' ,'.js_update_quantity' ,function(){
 		let _this = $(this);
 		let param = {
@@ -1219,7 +951,6 @@ function sub(a = 0 ,b = 0){
             }
         });
 	})
-	// +++++++++++++++++++++++cáº­p nháº­p sá»‘ lÆ°á»£ng vá» 0+++++++++++++++++++++++
 	$(document).on('click' ,'.js_refesh_quantity' ,function(){
 		let _this = $(this);
 		let param = {
@@ -1251,7 +982,6 @@ function sub(a = 0 ,b = 0){
         });
 	})
 
-	// +++++++++++++++++++++++ThĂªm mĂ£ coupn+++++++++++++++++++++++
 	$(document).on('click' ,'.js_btn_coupon' ,function(){
 		let _this = $(this);
 		let code_cp = $('.js_input_coupon').val();
@@ -1279,7 +1009,6 @@ function sub(a = 0 ,b = 0){
         });
 	})
 
-	// +++++++++++++++++++++++XĂ³a mĂ£ coupn+++++++++++++++++++++++
 	$(document).on('click' ,'.js_del_coupon' ,function(){
 		let _this = $(this);
 		let code_cp = _this.attr('data-coupon');
@@ -1307,15 +1036,6 @@ function sub(a = 0 ,b = 0){
         });
 	})
 
-
-
-	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	// +++++++++++++++++Xá»¬ LĂ TRANG THANH TOĂN PAYMENT+++++++++++++++++
-	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-	// +++++++++++++++++++XĂ³a mĂ£ Coupon+++++++++++++++++++
 	$(document).on('click' ,'.js_del_coupon_payment' ,function(){
 		let _this = $(this);
 		let code_cp = _this.attr('data-coupon');
@@ -1343,8 +1063,6 @@ function sub(a = 0 ,b = 0){
         });
 	})
 
-
-	//  +++++++++++++++++++++ThĂªm mĂ£ Coupon+++++++++++++++++++++
 	$(document).on('click' ,'.js_btn_coupon_payment' ,function(){
 		let _this = $(this);
 		let code_cp = $('.js_input_coupon_payment').val();
@@ -1372,8 +1090,6 @@ function sub(a = 0 ,b = 0){
         });
 	})
 
-
-	// ++++++++++++++++++++++++ cập nhật số lượng ++++++++++++++++++++++++
 	$(document).on('change' ,'.js_update_quantity_payment' ,function(){
 		let _this = $(this);
 		let param = {
@@ -1432,8 +1148,6 @@ function sub(a = 0 ,b = 0){
         });
     })
 
-
-	// +++++++++++++++tÄƒng giáº£m sá»‘ lÆ°á»£ng thĂªm 1 Ä‘Æ¡n vá»‹+++++++++++++++
 	$(document).on('click' ,'.btn-abatement' ,function(){
 		let _this = $(this);
 		let quantity = _this.parent().find('input').val();
@@ -1453,7 +1167,6 @@ function sub(a = 0 ,b = 0){
 
 });
 
-
 function resultResfeshCart(json =''){
 	$('.js_list_prd').html(json.list_prd);
 	$('.js_total_prd').html(json.total_quantity);
@@ -1466,7 +1179,6 @@ function resultResfeshCart(json =''){
 
 	return true;
 }
-
 
 function resultResfeshPayment(json =''){
 	console.log(json.list_prd);
@@ -1487,13 +1199,10 @@ function resultResfeshPayment(json =''){
 	return true;
 }
 
-
 function owl_intilize(sync1 = '#sync1', sync2 = '#sync2'){
-	 //======================  MAINSLIDE ===========================================
 	 var sync1 = $(sync1);
 	 var sync2 = $(sync2);
 	 sync1.owlCarousel({
-	  // autoPlay: 3000,
 	  singleItem : true,
 	  center: true,
 	  slideSpeed : 1000,
@@ -1536,7 +1245,6 @@ function owl_intilize(sync1 = '#sync1', sync2 = '#sync2'){
 	  sync1.trigger("owl.goTo",number);
 	});
 
-
 	function center(number){
 	  var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
 	  var num = number;
@@ -1573,8 +1281,6 @@ Accordion.prototype.dropdown=function(e){var $el=e.data.el;$this=$(this),$next=$
     var accordion = new Accordion($('.accordion'), false);
 });
 $(function () {
-    // $('#dg-container1').gallery();
-    // $('#dg-container2').gallery();
 });
 
 $(document).ready(function () {
@@ -1582,25 +1288,3 @@ $(document).ready(function () {
         $(".product-slider .slider").lightSlider({ item: 3, pager: false, slideMargin: 15, loop: false, slideMove: 1, easing: 'cubic-bezier(0.25, 0, 0.25, 1)', speed: 600, responsive: [{ breakpoint: 767, settings: { item: 2, slideMove: 1, slideMargin: 6, } }, { breakpoint: 480, settings: { item: 1, slideMove: 1 } }] });
     }
 });
-
-function add_loading(e){
-	e.addClass('active');
-	e.html(loading_html());
-}
-function del_loading(e){
-	e.removeClass('active');
-	e.html('');
-}
-function loading_html(){
-	let html = '';
-
-	html += '<div class="sk-spinner sk-spinner-wave">';
-	    html += '<div class="sk-rect1"></div>';
-	    html += '<div class="sk-rect2"></div>';
-	    html += '<div class="sk-rect3"></div>';
-	    html += '<div class="sk-rect4"></div>';
-	    html += '<div class="sk-rect5"></div>';
-	html += '</div>';
-
-	return html;
-}

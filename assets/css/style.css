@@ -1859,28 +1859,8 @@ body {
 	padding:5px;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
 }
-.mg-accordion, .mg-accordion ul{
-	list-style-type: none;
-}
-.mg-accordion .submenu{
-	display: none;
-}
 .justify-items-evenly{
 	justify-content: space-evenly;
-}
-.mg-flat span.toggler{
-	float: right;
-}
-.mg-flat a{
-	text-decoration: none;
-	display: block;
-}
-.mg-flat li a {
-    padding: 3px 10px;
-    border: 1px solid #ccc;
-    background: #eee;
-    display: block;
-    color: #243F9A;
 }
 a.openItem{
 	background: #e3e3e3!important;
@@ -1943,10 +1923,6 @@ a.openItem{
 }
 #ht2109_art-catalogue>.lta-panel{
 	margin-top: 30px;
-}
-.container.tv-no-background .mg-flat li a {
-	border:none;
-	background: #fff;
 }
 .lta-reverse ul{
 	list-style-position: outside!important;

@@ -1,24 +1,17 @@
-﻿/* Auto-merged from inline <style> blocks. */
-
-/* Source: cong-nghiep-lanh.html#style1 */
+﻿/* Styles từ inline <style> được gộp lại */
 .uk-offcanvas {
 							display: none;
 							position: static;
-							/* top: 0; */
-							/* right: 0; */
-							/* bottom: 0; */
-							/* left: 0; */
-							z-index: 1000;
+
+z-index: 1000;
 							touch-action: none;
 							background: rgba(0, 0, 0, .1);
 						}
 
 						.uk-offcanvas-bar {
 							position: static;
-							/* top: 0; */
-							/* bottom: 0; */
-							/* left: 0; */
-							-webkit-transform: translateX(0);
+
+-webkit-transform: translateX(0);
 							transform: translateX(0);
 							z-index: 1001;
 							width: 100%;
@@ -71,16 +64,14 @@
 						}
 
 						.uk-nav-offcanvas>li>a.l1 {
-							/*padding-left: 50px!important;*/
-							position: relative;
+position: relative;
 						}
 
 						.offcanvas li.l1>a.dropicon {
 							position: absolute;
 							z-index: 0;
 							padding: 10px 21px;
-							/*border-left: 1px solid #242424;*/
-							border-left: 0;
+border-left: 0;
 							right: 0;
 							top: 0;
 							width: 0;
@@ -146,9 +137,7 @@
 						.uk-nav-parent-icon>.uk-parent.uk-open>a:after {
 							content: "\f068";
 						}
-
-/* Source: cong-nghiep-lanh.html#style2 */
-/*MENU-DROPDOWN*/
+/* Menu dropdown */
 
 						.mobile-hd-categories .dropdown-box {
 							padding: 0;
@@ -194,10 +183,9 @@
 							box-shadow: 0px 1px 1px #c6c6c6;
 						}
 
-						/*=============================== navigation menu =============================*/
+						
 						.ht2109_navigation-mobile {
-							/*padding: 10px;*/
-							background: #666;
+background: #666;
 						}
 
 						.outer_moblie-menu-btn {
@@ -218,27 +206,19 @@
 							display: block;
 						}
 
-						/*############################# END navigation menu ########################### */
-
-/* Source: cong-ty.html#style1 */
 .uk-offcanvas {
                             display: none;
                             position: static;
-                            /* top: 0; */
-                            /* right: 0; */
-                            /* bottom: 0; */
-                            /* left: 0; */
-                            z-index: 1000;
+
+z-index: 1000;
                             touch-action: none;
                             background: rgba(0, 0, 0, .1);
                         }
 
                         .uk-offcanvas-bar {
                             position: static;
-                            /* top: 0; */
-                            /* bottom: 0; */
-                            /* left: 0; */
-                            -webkit-transform: translateX(0);
+
+-webkit-transform: translateX(0);
                             transform: translateX(0);
                             z-index: 1001;
                             width: 100%;
@@ -291,16 +271,14 @@
                         }
 
                         .uk-nav-offcanvas>li>a.l1 {
-                            /*padding-left: 50px!important;*/
-                            position: relative;
+position: relative;
                         }
 
                         .offcanvas li.l1>a.dropicon {
                             position: absolute;
                             z-index: 0;
                             padding: 10px 21px;
-                            /*border-left: 1px solid #242424;*/
-                            border-left: 0;
+border-left: 0;
                             right: 0;
                             top: 0;
                             width: 0;
@@ -366,9 +344,7 @@
                         .uk-nav-parent-icon>.uk-parent.uk-open>a:after {
                             content: "\f068";
                         }
-
-/* Source: cong-ty.html#style2 */
-/*MENU-DROPDOWN*/
+/* Menu dropdown */
 
                         .mobile-hd-categories .dropdown-box {
                             padding: 0;
@@ -414,10 +390,9 @@
                             box-shadow: 0px 1px 1px #c6c6c6;
                         }
 
-                        /*=============================== navigation menu =============================*/
+                        
                         .ht2109_navigation-mobile {
-                            /*padding: 10px;*/
-                            background: #666;
+background: #666;
                         }
 
                         .outer_moblie-menu-btn {
@@ -438,9 +413,6 @@
                             display: block;
                         }
 
-                        /*############################# END navigation menu ########################### */
-
-/* Source: du-an-cong-nghiep-lanh.html#style3 */
 .list-children li.uk-active a {
 				background: var(--main);
 				color: #fff;
@@ -449,8 +421,6 @@
 			.uk-switcher .pagination {
 				width: 100%;
 			}
-
-/* Source: du-an-m-e.html#style3 */
 .list-children li.uk-active a {
 				background: #0061d0;
 				color: #fff;
@@ -459,18 +429,13 @@
 			.uk-switcher .pagination {
 				width: 100%;
 			}
-
-/* Source: index.html#style3 */
 .hide {
 								opacity: 0 !important;
 							}
-
-/* Source: index.html#style4 */
 .partner-section {
 								padding: 20px 0 40px 0;
-								/* margin-bottom: var(--mg); */
-								/*background: #f7f7f7;*/
-							}
+
+}
 
 							.partner-section .heading-1 {
 								margin-bottom: var(--mg);
@@ -490,8 +455,7 @@
 							}
 
 							.list>li>.thumb {
-								/*margin: 3px 0;*/
-							}
+}
 
 							.list>li>.thumb .image {
 								box-shadow: 0px 0px 0 0 #999;
@@ -517,8 +481,6 @@
 							.list>li>.thumb .image:hover>img {
 								opacity: 1;
 							}
-
-/* Source: thong-tin-co-dong.html#style3 */
 .nice-select .list,
 							.nice-select {
 								width: 200px !important
@@ -528,8 +490,6 @@
 								height: 300px;
 								overflow-y: scroll;
 							}
-
-/* Source: thong-tin-co-dong.html#style4 */
 .title-accordion h2 {
 				font-size: 14px;
 				position: relative;
@@ -549,5 +509,3 @@
 			.title-accordion.uk-active h2:after {
 				content: "\f106";
 			}
-
-
