@@ -762,7 +762,6 @@ background: #666;
 
 /* Utility classes thay cho inline style */
 .bnk-text-justify { text-align: justify; }
-.bnk-fs-14 { font-size: 0.875rem; }
 .bnk-border-main { border: 10px solid var(--main); }
 .bnk-full-size { width: 100%; height: 100%; }
 .pl-30 { padding-left: 30px; }
@@ -846,5 +845,441 @@ background: #666;
 	section[id],
 	[data-anchor] {
 		scroll-margin-top: 60px;
+	}
+}
+
+/* ============================================================
+   HEADER STYLE UPGRADE
+   - Tăng font-size menu (13px → 16px)
+   - Letter-spacing nhẹ cho premium feel
+   - Hover effect cải tiến (underline animation)
+   - Logo container thoáng hơn
+   ============================================================ */
+
+/* Main menu items — bigger, bolder */
+.bnk-main-nav > .bnk-main-menu > li > a {
+	font-size: var(--bnk-fs-base, 1rem) !important;
+	font-weight: var(--bnk-fw-semibold, 600);
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	padding: 0 var(--bnk-space-4, 16px) !important;
+	transition: color var(--bnk-transition-fast, 150ms) ease;
+}
+
+@media (min-width: 1220px) {
+	.bnk-main-nav > .bnk-main-menu > li > a {
+		font-size: var(--bnk-fs-md, 1.0625rem) !important;
+		padding: 0 var(--bnk-space-5, 20px) !important;
+	}
+}
+
+/* Hover/active state — branded color */
+.bnk-pc-header .bnk-main-menu > li:hover > a,
+.bnk-pc-header .bnk-main-menu > li.uk-active > a,
+.bnk-pc-header .bnk-main-menu > li.active > a {
+	color: var(--bnk-brand, #006313) !important;
+}
+
+/* Underline animation on hover */
+.bnk-main-nav > .bnk-main-menu > li > a > *::after {
+	background: var(--bnk-brand, #006313) !important;
+	height: 3px !important;
+	transition: all 0.3s ease !important;
+}
+
+
+
+/* Dropdown menu styling */
+.bnk-pc-header .bnk-dropdown-menu {
+	box-shadow: var(--bnk-shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.15));
+	border-radius: var(--bnk-border-radius, 4px);
+	overflow: hidden;
+	border-top: 3px solid var(--bnk-brand, #006313);
+}
+
+.bnk-pc-header .bnk-dropdown-menu .uk-list.children > li > a {
+	padding: var(--bnk-space-3, 12px) var(--bnk-space-4, 16px) !important;
+	font-size: var(--bnk-fs-sm, 0.875rem);
+	font-weight: var(--bnk-fw-medium, 500);
+	transition: all 0.2s ease;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bnk-pc-header .bnk-dropdown-menu .uk-list.children > li:last-child > a {
+	border-bottom: none;
+}
+
+.bnk-pc-header .bnk-dropdown-menu .uk-list.children > li > a:hover {
+	background: var(--bnk-brand, #006313);
+	color: #fff !important;
+	padding-left: var(--bnk-space-6, 24px) !important;
+}
+
+/* Sticky header subtle shadow */
+.bnk-pc-header.fixed {
+	background: rgba(255, 255, 255, 0.97);
+	backdrop-filter: blur(8px);
+	box-shadow: var(--bnk-shadow, 0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+
+
+/* Mobile header — bigger logo + menu button */
+.bnk-mobile-header .logo img {
+	max-height: 44px;
+	width: auto;
+}
+
+.bnk-mobile-header .bnk-moblie-menu-btn span {
+	font-size: var(--bnk-fs-sm, 0.875rem);
+	font-weight: var(--bnk-fw-medium, 500);
+}
+
+/* ============================================================
+   FONT WEIGHT BOOST — Đậm hơn cho premium feel
+   ============================================================ */
+
+/* Headings tổng thể */
+h1, h2, h3, h4, h5, h6,
+.bnk-text-head,
+.bnk-heading-1,
+.bnk-prd_title_1,
+.bnk-title-accordion h2 {
+	font-weight: var(--bnk-fw-bold, 700) !important;
+}
+
+/* Section title */
+.bnk-text-head {
+	letter-spacing: 0.5px;
+}
+
+/* Main menu items — semibold (vừa fix ở trên) */
+.bnk-mobile-header .uk-nav.uk-nav-offcanvas > li > a,
+.bnk-mobile-header .uk-nav.uk-nav-offcanvas > li > a.l1 {
+	font-weight: var(--bnk-fw-semibold, 600) !important;
+	font-size: var(--bnk-fs-base, 1rem);
+}
+
+/* Logo company name */
+.bnk-ft_company {
+	font-weight: var(--bnk-fw-bold, 700);
+	letter-spacing: 0.5px;
+}
+
+/* Hotline button */
+.bnk-call-fix a {
+	font-weight: var(--bnk-fw-semibold, 600);
+}
+
+/* CTA buttons "Xem tiếp" */
+.bnk-view-more,
+.btn.bnk-view-more {
+	font-weight: var(--bnk-fw-semibold, 600);
+	letter-spacing: 0.3px;
+}
+
+/* Stats numbers */
+.bnk-info .title,
+.bnk-info .bnk-line-2,
+.bnk-info strong {
+	font-weight: var(--bnk-fw-bold, 700);
+}
+
+/* Body text — slight bump for readability */
+body,
+p {
+	font-weight: var(--bnk-fw-normal, 400);
+}
+
+/* Description text */
+.desc,
+.bnk-desc,
+.bnk-description {
+	font-weight: var(--bnk-fw-normal, 400);
+	line-height: 1.6;
+}
+
+/* ============================================================
+   HEADER HEIGHT FIX — Compact & aligned
+   ============================================================ */
+
+/* Logo size compact */
+.bnk-pc-header .logo {
+	padding: 0;
+}
+.bnk-pc-header .logo img {
+	max-height: 52px;
+	width: auto;
+	display: block;
+	transition: max-height 0.3s ease;
+}
+.bnk-pc-header.fixed .logo img {
+	max-height: 40px;
+}
+
+/* Header section — không padding, chiều cao do menu li điều khiển */
+.bnk-lta-header.bnk-dt-header {
+	padding: 0;
+}
+
+/* Menu li padding (vertical) — giảm từ 35px → 22px */
+.bnk-main-nav > .bnk-main-menu > li > a > * {
+	padding: 22px 0 !important;
+	display: inline-block;
+}
+
+/* Header chiều cao tổng = padding 22 × 2 + line-height ≈ 64-68px */
+
+/* Underline position — gần text hơn */
+.bnk-main-nav > .bnk-main-menu > li > a > *::after {
+	bottom: 16px !important;
+}
+
+/* Fixed state — compact hơn */
+.bnk-pc-header.fixed .bnk-main-menu > li > a > * {
+	padding: 16px 0 !important;
+}
+
+/* Dropdown position — sát dưới menu */
+.bnk-pc-header .bnk-dropdown-menu {
+	margin-top: 0;
+}
+
+/* Mobile header height */
+.bnk-mobile-header {
+	min-height: 56px;
+}
+.bnk-mobile-header .bnk-upper {
+	padding: var(--bnk-space-2, 8px) var(--bnk-space-3, 12px);
+}
+.bnk-mobile-header .logo img {
+	max-height: 40px;
+}
+
+/* ============================================================
+   FIX: bnk-intro-line layout (trang Giới thiệu)
+   - Cũ: absolute positioning với pixel hardcoded → broken
+   - Mới: flex layout responsive
+   ============================================================ */
+
+/* Container — flex layout */
+.bnk-intro-line {
+	display: flex !important;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: var(--bnk-space-4, 16px);
+	padding: var(--bnk-space-3, 12px) var(--bnk-space-4, 16px) !important;
+	background: #fff;
+	border-bottom: 2px solid var(--bnk-brand, #006313);
+}
+
+/* Logo (.bnk-img) — auto width, max-height */
+.bnk-intro-line .bnk-img {
+	position: static !important;
+	flex: 0 0 auto;
+}
+.bnk-intro-line .bnk-img img {
+	max-height: 48px;
+	width: auto;
+	display: block;
+}
+
+/* Text items — override absolute positioning */
+.bnk-intro-line .bnk-text,
+.bnk-intro-line[class*="text-"] .bnk-text,
+.bnk-intro-line .bnk-text-1,
+.bnk-intro-line .bnk-text-2,
+.bnk-intro-line .bnk-text-3,
+.bnk-intro-line .bnk-text-4,
+.bnk-intro-line .bnk-text-5,
+.bnk-intro-line .bnk-text-6 {
+	position: static !important;
+	top: auto !important;
+	left: auto !important;
+	transform: none !important;
+	flex: 1 1 auto;
+	text-align: center;
+	font-size: var(--bnk-fs-sm, 0.875rem);
+	font-weight: var(--bnk-fw-semibold, 600);
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+}
+
+/* Text link styling */
+.bnk-intro-line .bnk-text > a {
+	display: inline-block;
+	padding: var(--bnk-space-2, 8px) var(--bnk-space-3, 12px);
+	color: var(--bnk-text, #333) !important;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	border-radius: var(--bnk-border-radius, 4px);
+	line-height: 1.3;
+}
+.bnk-intro-line .bnk-text > a:hover {
+	background: var(--bnk-brand, #006313);
+	color: #fff !important;
+}
+
+/* Active state khi scroll-spy */
+.bnk-intro-line .bnk-text > a.uk-active,
+.bnk-intro-line .bnk-text > a:focus {
+	color: var(--bnk-brand, #006313) !important;
+	font-weight: var(--bnk-fw-bold, 700);
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+	.bnk-intro-line {
+		flex-direction: column;
+		gap: var(--bnk-space-2, 8px);
+		padding: var(--bnk-space-3, 12px) !important;
+	}
+	.bnk-intro-line .bnk-img {
+		margin-bottom: var(--bnk-space-2, 8px);
+	}
+	.bnk-intro-line .bnk-text {
+		flex: 1 1 100%;
+	}
+}
+
+/* Wrap container styling */
+.bnk-intro-line-wrap {
+	box-shadow: var(--bnk-shadow, 0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* ============================================================
+   BODY TEXT NORMALIZATION — Đồng bộ toàn site
+   - Body text 16px (1rem) = readable web standard
+   - Mobile slightly smaller (15px) cho narrower viewport
+   ============================================================ */
+
+/* Paragraph & description text dùng base font-size */
+p,
+.desc,
+.bnk-desc,
+.bnk-description {
+	font-size: var(--bnk-fs-base, 1rem);
+	line-height: var(--bnk-lh-normal, 1.6);
+	color: var(--bnk-text, #333);
+}
+
+/* Mobile: slightly smaller for narrower viewport readability */
+@media (max-width: 479px) {
+	body,
+	p,
+	.desc {
+		font-size: 0.9375rem; /* 15px */
+	}
+}
+
+/* Small text utility (caption, footnote) */
+small,
+.bnk-small {
+	font-size: var(--bnk-fs-sm, 0.875rem);
+}
+
+
+/* Menu container — never wrap, để text shrink */
+.uk-navbar-nav.bnk-main-menu {
+	flex-wrap: nowrap !important;
+	white-space: nowrap;
+}
+
+/* Viewport 960-1219px — small desktop: giảm padding + font */
+@media (min-width: 960px) and (max-width: 1219px) {
+	.bnk-main-nav > .bnk-main-menu > li > a {
+		font-size: var(--bnk-fs-sm, 0.875rem) !important;
+		padding: 0 var(--bnk-space-2, 8px) !important;
+		letter-spacing: 0;
+	}
+	.bnk-pc-header .logo img {
+		max-height: 44px;
+	}
+}
+
+/* Viewport 768-959px (tablet) — vẫn dùng desktop nếu user expand,
+   menu items rất compact */
+@media (min-width: 768px) and (max-width: 959px) {
+	.bnk-main-nav > .bnk-main-menu > li > a {
+		font-size: var(--bnk-fs-xs, 0.75rem) !important;
+		padding: 0 var(--bnk-space-1, 4px) !important;
+	}
+}
+
+/* Container fluid để tận dụng space */
+@media (max-width: 1219px) {
+	.bnk-pc-header .uk-container {
+		max-width: 100% !important;
+		padding: 0 var(--bnk-space-3, 12px);
+	}
+}
+
+/* ============================================================
+   FIX: Menu wrap 2 hàng — Aggressive scale theo viewport
+   - "Đối tác & khách hàng" (20 chars uppercase) là item dài nhất
+   - Scale font + padding ở nhiều breakpoint
+   ============================================================ */
+
+/* Force nowrap mọi viewport */
+.uk-navbar-nav.bnk-main-menu {
+	flex-wrap: nowrap !important;
+	white-space: nowrap;
+}
+.bnk-main-nav,
+.bnk-lta-menu {
+	min-width: 0;
+	overflow: visible;
+}
+
+/* Override default 1.0625rem (17px) — quá lớn cho 7 items */
+.bnk-main-nav > .bnk-main-menu > li > a {
+	font-size: 0.9375rem !important;  /* 15px */
+	padding: 0 var(--bnk-space-3, 12px) !important;
+	letter-spacing: 0.2px !important;
+}
+
+/* Viewport 1440+ — vẫn dùng compact, đủ rộng */
+@media (min-width: 1440px) {
+	.bnk-main-nav > .bnk-main-menu > li > a {
+		font-size: 1rem !important;  /* 16px */
+		padding: 0 var(--bnk-space-4, 16px) !important;
+	}
+}
+
+/* 1220-1439px — smaller */
+@media (min-width: 1220px) and (max-width: 1439px) {
+	.bnk-main-nav > .bnk-main-menu > li > a {
+		font-size: 0.875rem !important; /* 14px */
+		padding: 0 10px !important;
+	}
+}
+
+/* 960-1219px — extra compact, bỏ uppercase nếu cần */
+@media (min-width: 960px) and (max-width: 1219px) {
+	.bnk-main-nav > .bnk-main-menu > li > a {
+		font-size: 0.8125rem !important; /* 13px */
+		padding: 0 6px !important;
+		letter-spacing: 0 !important;
+		text-transform: none !important; /* Bỏ uppercase để gọn */
+		font-weight: var(--bnk-fw-bold, 700);
+	}
+	.bnk-pc-header .logo img {
+		max-height: 40px;
+	}
+}
+
+/* Container full-width <1440 để tận dụng space */
+@media (max-width: 1439px) {
+	.bnk-pc-header .uk-container {
+		max-width: 100% !important;
+		padding-left: var(--bnk-space-3, 12px);
+		padding-right: var(--bnk-space-3, 12px);
+	}
+	/* Cũng override division margin nếu là child */
+	.bnk-pc-header,
+	.bnk-mobile-header {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
 	}
 }
