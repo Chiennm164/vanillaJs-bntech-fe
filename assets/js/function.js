@@ -1,80 +1,74 @@
-﻿$(document).ready(function(){
-    $(document).on('click', 'a[href="#project-popup"]', function(){
-        let _this = $(this);
-        let id = _this.attr('data-id');
-        var formURL = 'article/ajax/article/project.html';
-        $.post(formURL, {
-            id:id},
-            function(data){
-                let response = JSON.parse(data);
-                let slideItem = project_slide(JSON.parse(response.object.album));
-                let textItem = project_text(response.object.title,response.object.description);
-                $('.post-slide').html(slideItem);
-                $('.post-text').html(textItem);
-                owlCarousel_r();
-            });
-        return false;
-    });
-});
-
-function owlCarousel_r(){
-    $('.post-slide .owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        responsiveClass:true,
-        responsive:{
-            0:{
-                items:1,
-                nav:true,
-                dots:false,
-            },
-            600:{
-                items:1,
-                nav:false,
-                dots:false,
-            },
-            1000:{
-                items:1,
-                nav:true,
-                dots:false,
-                loop:false
-            }
-        }
-    })
+// Escape HTML để chống XSS khi insert text vào DOM
+function escapeHtml(unsafe) {
+	if (unsafe == null) return "";
+	return String(unsafe)
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
 }
 
-function project_slide(listSlide){
-    let html  = '';
-    if(listSlide === null ){
-        return html;
-    }else{
-        html = html + '<div class="owl-carousel">';
-            for(let i = 0; i < listSlide.length; i++){
-                html = html + '<div class="thumb-post">'
-                    html = html + '<span class="img-cover">';
-                        html = html + '<img src="'+listSlide[i]+'" alt="">';
-                    html = html + '</span>';
-                html = html + '</div>';
-            }
-        html = html + '</div>';
-        return html;
-    }
+// Khởi tạo owl carousel cho project popup
+function owlCarousel_r() {
+	$(".post-slide .owl-carousel").owlCarousel({
+		loop: true,
+		margin: 10,
+		responsiveClass: true,
+		responsive: {
+			0: { items: 1, nav: true, dots: false },
+			600: { items: 1, nav: false, dots: false },
+			1000: { items: 1, nav: true, dots: false, loop: false }
+		}
+	});
 }
 
-function project_text(title, description){
-    let html = '<h3 class="title">'+title+'</h3>';
-        html = html + '<div class="desc">'+description+'</div>';
-    return html;
+// Build HTML cho slide hình ảnh dự án (escape URL)
+function project_slide(listSlide) {
+	if (!Array.isArray(listSlide) || listSlide.length === 0) return "";
+	var html = '<div class="owl-carousel">';
+	for (var i = 0; i < listSlide.length; i++) {
+		html +=
+			'<div class="thumb-post"><span class="img-cover">' +
+			'<img src="' + escapeHtml(listSlide[i]) + '" alt="Hình ảnh dự án">' +
+			"</span></div>";
+	}
+	html += "</div>";
+	return html;
 }
 
-$('#project-popup').on({
+// Build HTML cho tiêu đề + mô tả (escape title; description từ server có thể chứa HTML hợp lệ)
+function project_text(title, description) {
+	return (
+		'<h3 class="title">' + escapeHtml(title) + "</h3>" +
+		'<div class="desc">' + escapeHtml(description) + "</div>"
+	);
+}
 
-    'show.uk.modal': function(){
-       
-    },
+$(document).ready(function () {
+	// Click trigger popup chi tiết dự án
+	$(document).on("click", 'a[href="#project-popup"]', function () {
+		var id = $(this).attr("data-id");
+		var formURL = "article/ajax/article/project.html";
 
-    'hide.uk.modal': function(){
-        $('.post-slide').html('');
-        $('.post-text').html('');
-    }
+		$.post(formURL, { id: id }, function (data) {
+			try {
+				var response = JSON.parse(data);
+				var album = response.object.album ? JSON.parse(response.object.album) : [];
+				$(".post-slide").html(project_slide(album));
+				$(".post-text").html(project_text(response.object.title, response.object.description));
+				owlCarousel_r();
+			} catch (e) {
+				$(".post-slide").empty();
+				$(".post-text").text("Không thể tải dữ liệu dự án");
+			}
+		});
+		return false;
+	});
+
+	// Cleanup khi đóng popup
+	$("#project-popup").on("hide.uk.modal", function () {
+		$(".post-slide").empty();
+		$(".post-text").empty();
+	});
 });
