@@ -1283,3 +1283,70 @@ small,
 		margin-right: 0 !important;
 	}
 }
+
+/* ============================================================
+   FIX: Footer text color
+   - Footer có bg xanh (#006313), text phải trắng
+   - Override rule p {color: dark} ở trên
+   ============================================================ */
+
+#footer,
+#footer p,
+#footer .desc,
+#footer a,
+#footer .bnk-ft_company,
+#footer .bnk-ft-panel,
+#footer .bnk-ft-panel a {
+	color: #fff !important;
+}
+
+/* Footer link hover — slight highlight */
+#footer a:hover {
+	color: var(--bnk-brand-light, #28a745) !important;
+}
+
+/* Hotline button (call-fix) — bg accent + text trắng */
+.bnk-call-fix a {
+	color: #fff !important;
+}
+
+/* Social icons */
+#footer .list-social i,
+#footer .list-social a {
+	color: #fff !important;
+}
+
+/* ============================================================
+   FIX: .bnk-section.bnk-division.m0 quá sát
+   - .m0 utility {margin: 0 !important} cancel all margin
+   - Add margin-top breathing space cho consecutive sections
+   ============================================================ */
+
+.bnk-section.bnk-division.m0 {
+	margin-top: var(--bnk-space-8, 32px) !important;
+}
+@media (min-width: 768px) {
+	.bnk-section.bnk-division.m0 {
+		margin-top: var(--bnk-space-10, 40px) !important;
+	}
+}
+@media (min-width: 1220px) {
+	.bnk-section.bnk-division.m0 {
+		margin-top: var(--bnk-space-12, 48px) !important;
+	}
+}
+
+/* Padding-bottom của .bnk-division — tăng nhẹ */
+.bnk-section.bnk-division {
+	padding-bottom: var(--bnk-space-6, 24px);
+}
+@media (min-width: 768px) {
+	.bnk-section.bnk-division {
+		padding-bottom: var(--bnk-space-8, 32px);
+	}
+}
+@media (min-width: 1220px) {
+	.bnk-section.bnk-division {
+		padding-bottom: var(--bnk-space-10, 40px);
+	}
+}
