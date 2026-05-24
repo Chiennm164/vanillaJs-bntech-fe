@@ -1,74 +1,61 @@
-// Escape HTML để chống XSS khi insert text vào DOM
-function escapeHtml(unsafe) {
-	if (unsafe == null) return "";
-	return String(unsafe)
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/"/g, "&quot;")
-		.replace(/'/g, "&#039;");
-}
+/* ============================================================
+   BKTECH Function JS — Project popup modal handler
+   - Click .href="#project-popup" → hiển thị thông tin dự án
+   - Không gọi AJAX (static site, không có backend)
+   - Dùng data-title + title attribute từ trigger
+   ============================================================ */
 
-// Khởi tạo owl carousel cho project popup
-function owlCarousel_r() {
-	$(".post-slide .owl-carousel").owlCarousel({
-		loop: true,
-		margin: 10,
-		responsiveClass: true,
-		responsive: {
-			0: { items: 1, nav: true, dots: false },
-			600: { items: 1, nav: false, dots: false },
-			1000: { items: 1, nav: true, dots: false, loop: false }
-		}
-	});
-}
+(function ($) {
+	"use strict";
 
-// Build HTML cho slide hình ảnh dự án (escape URL)
-function project_slide(listSlide) {
-	if (!Array.isArray(listSlide) || listSlide.length === 0) return "";
-	var html = '<div class="owl-carousel">';
-	for (var i = 0; i < listSlide.length; i++) {
-		html +=
-			'<div class="thumb-post"><span class="img-cover">' +
-			'<img src="' + escapeHtml(listSlide[i]) + '" alt="Hình ảnh dự án">' +
-			"</span></div>";
+	// Escape HTML chống XSS
+	function escapeHtml(str) {
+		if (str == null) return "";
+		return String(str)
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#039;");
 	}
-	html += "</div>";
-	return html;
-}
 
-// Build HTML cho tiêu đề + mô tả (escape title; description từ server có thể chứa HTML hợp lệ)
-function project_text(title, description) {
-	return (
-		'<h3 class="title">' + escapeHtml(title) + "</h3>" +
-		'<div class="desc">' + escapeHtml(description) + "</div>"
-	);
-}
+	$(document).ready(function () {
+		const $slide = $(".bnk-post-slide");
+		const $text = $(".bnk-post-text");
 
-$(document).ready(function () {
-	// Click trigger popup chi tiết dự án
-	$(document).on("click", 'a[href="#project-popup"]', function () {
-		var id = $(this).attr("data-id");
-		var formURL = "article/ajax/article/project.html";
+		// Click trigger → hiển thị thông tin từ data-* + title
+		$(document).on("click", 'a[href="#project-popup"]', function () {
+			const $trigger = $(this);
+			const title = $trigger.attr("title") || $trigger.attr("data-title") || "Dự án BKTECH";
 
-		$.post(formURL, { id: id }, function (data) {
-			try {
-				var response = JSON.parse(data);
-				var album = response.object.album ? JSON.parse(response.object.album) : [];
-				$(".post-slide").html(project_slide(album));
-				$(".post-text").html(project_text(response.object.title, response.object.description));
-				owlCarousel_r();
-			} catch (e) {
-				$(".post-slide").empty();
-				$(".post-text").text("Không thể tải dữ liệu dự án");
-			}
+			// Tìm ảnh gần trigger (cùng card)
+			const $card = $trigger.closest(".bnk-prd_item, .bnk-project-item, li, .uk-grid > div");
+			const $img = $card.find("img").first();
+			const imgSrc = $img.attr("src") || "upload/images/bnk-logo-bnk.jpg";
+			const imgAlt = $img.attr("alt") || title;
+
+			// Build content trực tiếp (không AJAX)
+			const slideHtml =
+				'<div class="thumb-post"><span class="img-cover">' +
+				'<img src="' + escapeHtml(imgSrc) + '" alt="' + escapeHtml(imgAlt) + '">' +
+				"</span></div>";
+
+			const textHtml =
+				'<h3 class="title">' + escapeHtml(title) + "</h3>" +
+				'<div class="desc"><p>Thông tin chi tiết dự án sẽ được cập nhật sớm. ' +
+				'Liên hệ Hotline <a href="tel:0983842889"><strong>0983 842 889</strong></a> ' +
+				"để biết thêm chi tiết.</p></div>";
+
+			$slide.html(slideHtml);
+			$text.html(textHtml);
+
+			return false;
 		});
-		return false;
-	});
 
-	// Cleanup khi đóng popup
-	$("#project-popup").on("hide.uk.modal", function () {
-		$(".post-slide").empty();
-		$(".post-text").empty();
+		// Cleanup khi đóng popup
+		$("#project-popup").on("hide.uk.modal", function () {
+			$slide.empty();
+			$text.empty();
+		});
 	});
-});
+})(jQuery);

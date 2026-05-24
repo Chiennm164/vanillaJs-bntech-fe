@@ -1,0 +1,287 @@
+﻿/* ============================================================
+   BKTECH Base CSS — Design tokens + Utility classes
+   Mục đích: chuẩn hóa spacing, typography, color cho toàn site
+   Naming: tất cả prefix với `bnk-` để tránh xung đột vendor
+   ============================================================ */
+
+/* -----------------------------------------------------------
+   1. DESIGN TOKENS (CSS Variables)
+   ----------------------------------------------------------- */
+:root {
+	/* --- Brand colors --- */
+	--bnk-brand: #006313;
+	--bnk-brand-light: #28a745;
+	--bnk-brand-dark: #004a0e;
+	--bnk-brand-accent: #bb8c37;
+
+	/* --- Text colors --- */
+	--bnk-text: #333333;
+	--bnk-text-muted: #6c757d;
+	--bnk-text-inverse: #ffffff;
+	--bnk-text-link: var(--bnk-brand);
+	--bnk-text-link-hover: var(--bnk-brand-light);
+
+	/* --- Background colors --- */
+	--bnk-bg: #ffffff;
+	--bnk-bg-alt: #f8f9fa;
+	--bnk-bg-dark: #232323;
+	--bnk-bg-overlay: rgba(0, 0, 0, 0.5);
+
+	/* --- Border --- */
+	--bnk-border-color: #e0e0e0;
+	--bnk-border-color-light: #eaeaea;
+	--bnk-border-radius-sm: 2px;
+	--bnk-border-radius: 4px;
+	--bnk-border-radius-lg: 8px;
+	--bnk-border-radius-full: 9999px;
+
+	/* --- Spacing (4px base) --- */
+	--bnk-space-0: 0;
+	--bnk-space-1: 4px;
+	--bnk-space-2: 8px;
+	--bnk-space-3: 12px;
+	--bnk-space-4: 16px;
+	--bnk-space-5: 20px;
+	--bnk-space-6: 24px;
+	--bnk-space-8: 32px;
+	--bnk-space-10: 40px;
+	--bnk-space-12: 48px;
+	--bnk-space-16: 64px;
+	--bnk-space-20: 80px;
+
+	/* --- Typography --- */
+	--bnk-font-primary: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--bnk-font-heading: var(--bnk-font-primary);
+	--bnk-font-mono: Consolas, Monaco, "Courier New", monospace;
+
+	/* Font sizes (rem-based, 1rem = 16px) */
+	--bnk-fs-xs: 0.75rem;     /* 12px */
+	--bnk-fs-sm: 0.875rem;    /* 14px */
+	--bnk-fs-base: 1rem;      /* 16px */
+	--bnk-fs-md: 1.125rem;    /* 18px */
+	--bnk-fs-lg: 1.25rem;     /* 20px */
+	--bnk-fs-xl: 1.5rem;      /* 24px */
+	--bnk-fs-2xl: 1.875rem;   /* 30px */
+	--bnk-fs-3xl: 2.25rem;    /* 36px */
+	--bnk-fs-4xl: 3rem;       /* 48px */
+	--bnk-fs-5xl: 3.75rem;    /* 60px */
+
+	/* Font weights */
+	--bnk-fw-light: 300;
+	--bnk-fw-normal: 400;
+	--bnk-fw-medium: 500;
+	--bnk-fw-semibold: 600;
+	--bnk-fw-bold: 700;
+
+	/* Line heights */
+	--bnk-lh-tight: 1.25;
+	--bnk-lh-normal: 1.5;
+	--bnk-lh-loose: 1.75;
+
+	/* --- Shadows --- */
+	--bnk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+	--bnk-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	--bnk-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+	/* --- Transitions --- */
+	--bnk-transition-fast: 150ms ease;
+	--bnk-transition: 300ms ease;
+	--bnk-transition-slow: 500ms ease;
+
+	/* --- Z-index scale --- */
+	--bnk-z-base: 1;
+	--bnk-z-dropdown: 1000;
+	--bnk-z-sticky: 1020;
+	--bnk-z-modal: 1050;
+	--bnk-z-tooltip: 1100;
+}
+
+/* -----------------------------------------------------------
+   2. UTILITY CLASSES — Spacing
+   ----------------------------------------------------------- */
+/* Margin all sides */
+.bnk-m-0 { margin: var(--bnk-space-0); }
+.bnk-m-1 { margin: var(--bnk-space-1); }
+.bnk-m-2 { margin: var(--bnk-space-2); }
+.bnk-m-3 { margin: var(--bnk-space-3); }
+.bnk-m-4 { margin: var(--bnk-space-4); }
+.bnk-m-5 { margin: var(--bnk-space-5); }
+.bnk-m-6 { margin: var(--bnk-space-6); }
+.bnk-m-8 { margin: var(--bnk-space-8); }
+.bnk-m-auto { margin: auto; }
+
+/* Margin top */
+.bnk-mt-0 { margin-top: var(--bnk-space-0); }
+.bnk-mt-1 { margin-top: var(--bnk-space-1); }
+.bnk-mt-2 { margin-top: var(--bnk-space-2); }
+.bnk-mt-3 { margin-top: var(--bnk-space-3); }
+.bnk-mt-4 { margin-top: var(--bnk-space-4); }
+.bnk-mt-5 { margin-top: var(--bnk-space-5); }
+.bnk-mt-6 { margin-top: var(--bnk-space-6); }
+.bnk-mt-8 { margin-top: var(--bnk-space-8); }
+.bnk-mt-10 { margin-top: var(--bnk-space-10); }
+.bnk-mt-12 { margin-top: var(--bnk-space-12); }
+
+/* Margin bottom */
+.bnk-mb-0 { margin-bottom: var(--bnk-space-0); }
+.bnk-mb-1 { margin-bottom: var(--bnk-space-1); }
+.bnk-mb-2 { margin-bottom: var(--bnk-space-2); }
+.bnk-mb-3 { margin-bottom: var(--bnk-space-3); }
+.bnk-mb-4 { margin-bottom: var(--bnk-space-4); }
+.bnk-mb-5 { margin-bottom: var(--bnk-space-5); }
+.bnk-mb-6 { margin-bottom: var(--bnk-space-6); }
+.bnk-mb-8 { margin-bottom: var(--bnk-space-8); }
+.bnk-mb-10 { margin-bottom: var(--bnk-space-10); }
+.bnk-mb-12 { margin-bottom: var(--bnk-space-12); }
+
+/* Padding all */
+.bnk-p-0 { padding: var(--bnk-space-0); }
+.bnk-p-1 { padding: var(--bnk-space-1); }
+.bnk-p-2 { padding: var(--bnk-space-2); }
+.bnk-p-3 { padding: var(--bnk-space-3); }
+.bnk-p-4 { padding: var(--bnk-space-4); }
+.bnk-p-5 { padding: var(--bnk-space-5); }
+.bnk-p-6 { padding: var(--bnk-space-6); }
+.bnk-p-8 { padding: var(--bnk-space-8); }
+
+/* Padding axes */
+.bnk-px-2 { padding-left: var(--bnk-space-2); padding-right: var(--bnk-space-2); }
+.bnk-px-4 { padding-left: var(--bnk-space-4); padding-right: var(--bnk-space-4); }
+.bnk-px-6 { padding-left: var(--bnk-space-6); padding-right: var(--bnk-space-6); }
+.bnk-py-2 { padding-top: var(--bnk-space-2); padding-bottom: var(--bnk-space-2); }
+.bnk-py-4 { padding-top: var(--bnk-space-4); padding-bottom: var(--bnk-space-4); }
+.bnk-py-6 { padding-top: var(--bnk-space-6); padding-bottom: var(--bnk-space-6); }
+.bnk-py-8 { padding-top: var(--bnk-space-8); padding-bottom: var(--bnk-space-8); }
+
+/* -----------------------------------------------------------
+   3. UTILITY CLASSES — Typography
+   ----------------------------------------------------------- */
+/* Font sizes */
+.bnk-text-xs { font-size: var(--bnk-fs-xs); }
+.bnk-text-sm { font-size: var(--bnk-fs-sm); }
+.bnk-text-base { font-size: var(--bnk-fs-base); }
+.bnk-text-md { font-size: var(--bnk-fs-md); }
+.bnk-text-lg { font-size: var(--bnk-fs-lg); }
+.bnk-text-xl { font-size: var(--bnk-fs-xl); }
+.bnk-text-2xl { font-size: var(--bnk-fs-2xl); }
+.bnk-text-3xl { font-size: var(--bnk-fs-3xl); }
+.bnk-text-4xl { font-size: var(--bnk-fs-4xl); }
+
+/* Font weights */
+.bnk-font-light { font-weight: var(--bnk-fw-light); }
+.bnk-font-normal { font-weight: var(--bnk-fw-normal); }
+.bnk-font-medium { font-weight: var(--bnk-fw-medium); }
+.bnk-font-semibold { font-weight: var(--bnk-fw-semibold); }
+.bnk-font-bold { font-weight: var(--bnk-fw-bold); }
+
+/* Text colors */
+.bnk-text-brand { color: var(--bnk-brand); }
+.bnk-text-brand-light { color: var(--bnk-brand-light); }
+.bnk-text-muted { color: var(--bnk-text-muted); }
+.bnk-text-white { color: var(--bnk-text-inverse); }
+.bnk-text-dark { color: var(--bnk-text); }
+
+/* Text align — đã có .bnk-text-center, .bnk-text-justify trong inline-merged.css */
+.bnk-text-left { text-align: left; }
+.bnk-text-right { text-align: right; }
+.bnk-text-uppercase { text-transform: uppercase; }
+.bnk-text-capitalize { text-transform: capitalize; }
+.bnk-text-nowrap { white-space: nowrap; }
+.bnk-text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Line height */
+.bnk-lh-tight { line-height: var(--bnk-lh-tight); }
+.bnk-lh-normal { line-height: var(--bnk-lh-normal); }
+.bnk-lh-loose { line-height: var(--bnk-lh-loose); }
+
+/* -----------------------------------------------------------
+   4. UTILITY CLASSES — Display & Layout
+   ----------------------------------------------------------- */
+.bnk-d-none { display: none; }
+.bnk-d-block { display: block; }
+.bnk-d-inline { display: inline; }
+.bnk-d-inline-block { display: inline-block; }
+.bnk-d-flex { display: flex; }
+.bnk-d-grid { display: grid; }
+
+/* Flex helpers */
+.bnk-flex-col { flex-direction: column; }
+.bnk-flex-wrap { flex-wrap: wrap; }
+.bnk-items-center { align-items: center; }
+.bnk-items-start { align-items: flex-start; }
+.bnk-items-end { align-items: flex-end; }
+.bnk-justify-center { justify-content: center; }
+.bnk-justify-between { justify-content: space-between; }
+.bnk-justify-around { justify-content: space-around; }
+.bnk-gap-2 { gap: var(--bnk-space-2); }
+.bnk-gap-4 { gap: var(--bnk-space-4); }
+.bnk-gap-6 { gap: var(--bnk-space-6); }
+
+/* Position */
+.bnk-relative { position: relative; }
+.bnk-absolute { position: absolute; }
+.bnk-fixed { position: fixed; }
+.bnk-sticky { position: sticky; }
+
+/* Width / Height */
+.bnk-w-full { width: 100%; }
+.bnk-w-auto { width: auto; }
+.bnk-h-full { height: 100%; }
+.bnk-h-screen { height: 100vh; height: 100dvh; }
+
+/* -----------------------------------------------------------
+   5. UTILITY CLASSES — Visual
+   ----------------------------------------------------------- */
+/* Border radius */
+.bnk-rounded-sm { border-radius: var(--bnk-border-radius-sm); }
+.bnk-rounded { border-radius: var(--bnk-border-radius); }
+.bnk-rounded-lg { border-radius: var(--bnk-border-radius-lg); }
+.bnk-rounded-full { border-radius: var(--bnk-border-radius-full); }
+
+/* Shadow */
+.bnk-shadow-sm { box-shadow: var(--bnk-shadow-sm); }
+.bnk-shadow { box-shadow: var(--bnk-shadow); }
+.bnk-shadow-lg { box-shadow: var(--bnk-shadow-lg); }
+
+/* Background */
+.bnk-bg-brand { background-color: var(--bnk-brand); }
+.bnk-bg-light { background-color: var(--bnk-bg-alt); }
+.bnk-bg-dark { background-color: var(--bnk-bg-dark); }
+
+/* -----------------------------------------------------------
+   6. ELEMENT BASE STYLES (reset/normalize bổ sung UIkit)
+   ----------------------------------------------------------- */
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+a {
+	color: var(--bnk-text-link);
+	text-decoration: none;
+	transition: color var(--bnk-transition-fast);
+}
+a:hover {
+	color: var(--bnk-text-link-hover);
+}
+
+button {
+	cursor: pointer;
+	font-family: inherit;
+}
+
+/* -----------------------------------------------------------
+   GLOBAL FONT FAMILY (BE VIETNAM PRO)
+   ----------------------------------------------------------- */
+body,
+button,
+input,
+select,
+textarea {
+	font-family: var(--bnk-font-primary);
+}
